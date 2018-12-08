@@ -1,0 +1,203 @@
+@charset "utf-8";
+/* CSS Document */ links 
+
+a:hover {color:#666; text-decoration:none;}
+body{
+	height:100%; 
+	width:100%; 
+	margin:0; 
+	padding:0; 
+	overflow:hidden;
+
+}
+.kopje
+{
+    font: normal 13px Verdana, Geneva, sans-serif, #333;
+    line-height: 50px;	
+    display: block;
+	text-align:right;
+	z-index:9;
+	letter-spacing:1px;
+}
+H1{
+	float: left;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: #333;
+	letter-spacing:4px;
+}
+H2
+{
+	text-align:Left;
+	color:#333;
+	font-size:0.8em;
+	font-family: Tahoma, Geneva, sans-serif;
+	z-index:9;
+	letter-spacing:4px;
+	margin:0;
+	padding:0;
+	font-weight:bold;
+}
+
+P{
+
+	text-align:Left;
+	color:#333;
+	font-size:0.6em;
+	font-family: Tahoma, Geneva, sans-serif;
+	z-index:9;
+	letter-spacing:4px;
+	margin:0;
+	padding:0;
+
+
+}
+.breed
+{
+	text-align:Left;
+	color:#333;
+	font-size:1.0em;
+	font-family: Tahoma, Geneva, sans-serif;
+	z-index:9;
+	letter-spacing:4px;
+	margin:0;
+	padding:0;
+}
+
+.wbreed
+{
+	text-align:Left;
+	color:#fff;
+	font-size:1.0em;
+	font-family: Tahoma, Geneva, sans-serif;
+	z-index:9;
+	letter-spacing:4px;
+	margin:0;
+	padding:0;
+}
+.wbreed a
+{	text-decoration:none; 
+	color:#fff; 
+	font-weight:800px;}
+
+
+ menu 
+div#menu {position:absolute;}
+div#copyright a { color:#000; }
+div#copyright a:hover { color:#000; }
+
+.pijl{
+	left:48%;
+	position:fixed;
+	z-index:0;
+}
+.Scroller-Container {
+  position: relative;
+  margin: 140px 0 0 0;
+  overflow:hidden;
+}
+.Scrollbar-Up {
+  position:Fixed;
+  width:100%; 
+  height:35px;
+  z-index:2;
+  right:0px;
+  margin:-140px 40px 0 0;
+}
+.Scrollbar-Track {
+  width:40px;
+  height:550px;
+  position: absolute;
+  top:0px;
+  right:0px;
+}
+.Scrollbar-Lijn {
+  position: absolute;
+  width: 1px; height:526px;
+  background-color: #DADADA;
+  border-right:1px solid #AAA;
+  left:3px;
+  margin:12px 40px 12px 0;
+  opacity:.30;
+  filter: alpha(opacity=30);
+  -moz-opacity: 0.3;
+}
+.Scrollbar-Handle {
+  position: absolute;
+  width: 10px; height:66px;
+  background:url(submappen/menu/images/scroll.png) no-repeat;
+  right:3px;
+  opacity:.50;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+}
+.Scrollbar-Down {
+  position:Fixed;
+  bottom:0px;
+  right:0px;
+  width:100%; 
+  height:35px;
+  z-index:2;
+}
+#Scrollbar-Container {
+  position: absolute;
+  top:140px; right:0px;
+}
+#News {display: block;}
+
+.tussen {
+	height:1000px;
+	width:100%;
+	overflow:auto;
+	position:relative;
+}
+#meerfotos{
+	padding:150px;
+	cursor: pointer;
+	overflow:hidden;
+}
+.bgvak{
+	 height:5px;
+	 width:5px;
+}
+#bg{
+	
+}
+#mws4823641 {
+	 opacity:.10;
+	 filter: alpha(opacity=10);
+	 -moz-opacity: 0.1;
+	position:fixed;
+	right:0px;
+	bottom:0px;
+	margin:-6px -4px;
+	z-index:3;
+}
+ #close{
+	 width:90px;
+	 height:30px;
+	 position:fixed;
+	 top:129px;
+	 left:50%;
+	 margin:0 0 0 494px;
+	 z-index:801;
+ }
+#iframe{
+	 width:1026px;
+	 height:575px;
+	 overflow:hidden;
+	 top:140px;
+	 left:50%;
+	 margin:0 0 0 -512px;
+	 position:fixed;
+	 overflow:hidden;
+	 z-index:800;
+	 padding:0;
+ }
+ 
+ #field-db19d7312348c6a, #email, #name{
+	filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	opacity: 0.5;
+ }

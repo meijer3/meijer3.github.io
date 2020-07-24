@@ -7,7 +7,7 @@
 		<meta name="author" content="Sander Meijer">
 		<title>GeoDev</title>
 		
-		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
 
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet" type="text/css">
@@ -49,13 +49,16 @@
 		</nav>
 
 		<!-- Header -->
-		<header class="masthead">
+		<header class="masthead" style="background-image: url('img/header.png');">
 			<div class="container">
 				<div class="intro-text">
-					<div class="intro-heading">Welcome to GeoDev!</div>
+					<!-- <div class="intro-heading">GeoDev!</div>
 
-					<div class="intro-lead-out">FME specialist, GIS developer and analyst</div>
-					<a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">What is that?</a>
+					
+					<a class="btn btn-primary btn-xl js-scroll-trigger btn-header" href="#services">
+						<span class="btn-higglight">Geo</span>graphic + <span class="btn-higglight">Dev</span>eloping<br>
+						= ♥<br>
+						↓ ↓ ↓</a> -->
 				</div>
 			</div>
 		</header>
@@ -93,8 +96,9 @@
 			</div>
 			<div class="row" style="margin-top:60px;">
 							<div class="col-sm-3 fme-icon" ></div>
-							<div class="col-sm-2 fme-icon" style="background-image:url('https://images.safe.com/logos/fme/fme-certified-trainer.png');"></div>
+							
 							<div class="col-sm-2 fme-icon" style="background-image:url('https://images.safe.com/logos/fme/fme-certified-professional.png');"></div>
+							<div class="col-sm-2 fme-icon" style="background-image:url('https://images.safe.com/logos/fme/fme-certified-trainer.png');"></div>
 							<div class="col-sm-2 fme-icon" style="background-image:url('https://images.safe.com/logos/fme/fme-certified-server.png');"></div>
 
 						</div>
@@ -102,7 +106,7 @@
 
 		<!-- Portfolio -->
 		<section class="bg-light page-section" id="portfolio">
-			<div class="container">
+			<div class="container container-full">
 				<div class="row">
 
 					<div class="col-lg-12 text-center">
@@ -116,85 +120,85 @@
 					<div class="col-md-4 col-sm-6 portfolio-item">
 						<a class="portfolio-link" data-toggle="modal" href="#glacialdrone">
 							<div class="portfolio-hover">
-								<span class="portfolio-hover-content">Read more</span>
+								<span class="portfolio-hover-content">Does the glacier retreat?</span>
 							</div>
 							<img class="img-fluid" src="https://github.com/meijer3/meijer3.github.io/raw/master/img/nepal_thumb.jpg" alt="">
-						</a>
 						<div class="portfolio-caption">
-							<h4>Does the glacier reteat?</h4>
-							<p class="text-muted">Scientific research with a drone (UAV) done in Nepal</p>
+							<h4>Drones in Himalaya</h4>
 						</div>
+					</a>
+
 					</div>
 
 					<div class="col-md-4 col-sm-6 portfolio-item">
-						<a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+						<a class="portfolio-link" data-toggle="modal" href="#c2000">
 							<div class="portfolio-hover">
-								<span class="portfolio-hover-content">Read more</span>
+								<span class="portfolio-hover-content">C2000 input map</span>
 							</div>
 							<img class="img-fluid" src="https://github.com/meijer3/meijer3.github.io/raw/master/img/c2000__thumb.jpg" alt="Classification of The Netherlands">
-						</a>
 						<div class="portfolio-caption">
-							<h4>C2000 input map</h4>
-							<p class="text-muted">Classification of public PDOK data used for creating raw signal map. Big data: 5mx5m pixels of the whole of the Netherlands</p>
+							<h4>How rough is Holland?</h4>
 						</div>
+					</a>
+
 					</div>
 
 					<div class="col-md-4 col-sm-6 portfolio-item">
-						<a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+						<a class="portfolio-link" data-toggle="modal" href="#wayfinding">
 							<div class="portfolio-hover">
-								<span class="portfolio-hover-content">Read more</span>
+								<span class="portfolio-hover-content">Schiphol Wayfinding API</span>
 							</div>
 							<img class="img-fluid" src="https://github.com/meijer3/meijer3.github.io/raw/master/img/wayfinding_thumb.jpg" alt="Wayfinfing at airport Schihol">
-						</a>
 						<div class="portfolio-caption">
-							<h4>Schiphol Wayfinding API</h4>
-							<p class="text-muted">A public API for indoor route/wayfinding at Amsterdam Airport.</p>
+							<h4>Go to your gate</h4>
 						</div>
+					</a>
+
 					</div>
 
 					<div class="col-md-4 col-sm-6 portfolio-item">
-						<a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+						<a class="portfolio-link" data-toggle="modal" href="#boreholes">
 							<div class="portfolio-hover">
-								<span class="portfolio-hover-content">Read more</span>
+								<span class="portfolio-hover-content">Digitalization of 1980's boreholes</span>
 							</div>
 							<img class="img-fluid" src="https://github.com/meijer3/meijer3.github.io/raw/master/img/boring_thumb.jpg" alt="FME reading of a PDF">
-						</a>
 						<div class="portfolio-caption">
-							<h4>Digitalization of 1980's boreholes</h4>
-							<p class="text-muted">A big FME script to convert PDF drawings into a digital borehole format .GEF</p>
+							<h4>No humans involved</h4>
 						</div>
+					</a>
+
 					</div>
 
 					<div class="col-md-4 col-sm-6 portfolio-item">
-						<a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+						<a class="portfolio-link" data-toggle="modal" href="#fmetrainings">
 							<div class="portfolio-hover">
-								<span class="portfolio-hover-content">Read more</span>
+								<span class="portfolio-hover-content">Feature Manipulation Engine</span>
 							</div>
 							<img class="img-fluid" src="https://github.com/meijer3/meijer3.github.io/raw/master/img/training_thumb.jpg" alt="FME training">
-						</a>
 						<div class="portfolio-caption">
 							<h4>Offical Trainer for FME courses</h4>
-							<p class="text-muted">Offical standard FME courses. Learned from expert trainers (Sweco Sweden)</p>
 						</div>
+					</a>
+
 					</div>
 
 					<div class="col-md-4 col-sm-6 portfolio-item">
-						<a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+						<a class="portfolio-link" data-toggle="modal" href="#datalab">
 							<div class="portfolio-hover">
-								<span class="portfolio-hover-content">Read more</span>
+								<span class="portfolio-hover-content">ArcGIS, PDOK, Waterschapsdata</span>
 							</div>
-							
 							<img class="img-fluid" src="https://github.com/meijer3/meijer3.github.io/raw/master/img/datalab_thumb.jpg" alt="Datalab concept">
-						</a>
+						
 						<div class="portfolio-caption">
-							<h4>Download everything on Datalab</h4>
-							<p class="text-muted">A viewer that downloads (without caches) data from all public Endpoints, like PDOK and rest interfaces such as Prorail, RWS and waterboards</p>
+							<h4>Download GIS the easy way</h4>
 						</div>
+					</a>
 					</div>
 
 				</div>
+				<div class="row" style="margin-top: 100px;">
 				Other projects
-				<ul>
+				<ul class="normallist">
 					<li>Interactive <b>D3JS dashboard</b> for 'tankcooker' project (D3JS and FME)</li>
 					<li><b>Audith of FME</b> usage at Prorail and Rijkswaterstaat</li>
 					<li><b>Schiphol <a href="https://register.apple.com/resources/imdf/">IMDF</a></b> (Apple's/Standard indoor map format) with FME. So Schiphol indoor in Apple's maps on your Iphone</li>
@@ -208,7 +212,7 @@
 					<li>FME validations, fme workspace / other documents </li>
 					<li>Alot of GeoWeb sites, workflows and such</li>
 				</ul>
-
+			</div>
 			</div>
 		</section>
 		
@@ -282,46 +286,26 @@
 					</div>
 				</div>
 				<div class="row">
-
-					<div class="col-sm-4 mx-auto text-center">
-						<div class="team-member">
-							<img class="mx-auto rounded-circle" src="https://media.licdn.com/dms/image/C5603AQGwYJyTWtxZBQ/profile-displayphoto-shrink_200_200/0?e=1580342400&v=beta&t=_pmRM-zXtwNMHT5eTP4vhZK7jEYlT-RTXlnDVaxvve8" alt="">
+					<div class="col-sm-4 mx-auto text-center" >
+						<div class="team-member" onclick="window.open('https://nl.linkedin.com/in/swmeijer', '_blank')">
+							<img class="mx-auto rounded-circle" src="img/linkedin.jpg" alt="">
 							<h4>Sander Meijer</h4>
 							<p class="text-muted">Freelance Developer / Trainer / Analyst</p>
 							<ul class="list-inline social-buttons">
 								<li class="list-inline-item">
-									<a href="#">
+									<a href="https://nl.linkedin.com/in/swmeijer" target="_blank">
 										<i class="fab fa-linkedin-in"></i>
 									</a>
 								</li>
 							</ul>
 						</div>
+						
 					</div>
-
 				</div>
 			</div>
 		</section>
 
-		<!-- Clients -->
-		<section class="page-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 text-center">
-						<h6 class="section-subheading text-muted">Worked for</h6>
-					</div>
-				</div>
-				<div class="row">
-					<div class="row customer-logos slider">
 
-						<div class="slide"><img src="https://www.nritmedia.nl/images/20160914_160513.jpg"></div>
-						<div class="slide"><img src="https://exellior.com/wp-content/uploads/2014/08/rijkswaterstaat-logo.jpg"></div>
-						<div class="slide"><img src="https://www.vraaghetdepolitie.nl/binaries/w640h360/content/gallery/vhdp/standaard-afbeeldingen/politie-logo.png"></div>
-						<div class="slide"><img src="https://www.nritmedia.nl/images/20160914_160513.jpg"></div>
-					</div>
-
-				</div>
-			</div>
-		</section>
 
 		<!-- Contact -->
 		<section class=" page-section" id="contact">
@@ -329,7 +313,7 @@
 				<div class="row">
 					<div class="col-lg-12 text-center">
 						<h2 class="section-heading text-uppercase">Contact Us</h2>
-						<h3 class="section-subheading text-muted">Please contact me via <a href="https://www.linkedin.com/in/swmeijer/">linked in</a></h3>
+						<h3 class="section-subheading" style="color: white;">Please contact me via <a href="https://www.linkedin.com/in/swmeijer/" target="_blank">linked in</a></h3>
 					</div>
 				</div>
 			</div>
@@ -340,12 +324,12 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-md-4">
-						<span class="copyright">Copyright &copy; GeoDev 2019</span>
+						<span class="copyright">Copyright &copy; GeoDev 2019-2020</span>
 					</div>
 					<div class="col-md-4">
 						<ul class="list-inline social-buttons">
 							<li class="list-inline-item">
-								<a href="https://www.linkedin.com/in/swmeijer/">
+								<a href="https://www.linkedin.com/in/swmeijer/" target="_blank">
 									<i class="fab fa-linkedin-in"></i>
 								</a>
 							</li>
@@ -368,16 +352,21 @@
 							<div class="rl"></div>
 						</div>
 					</div>
-					<div class="container">
+					<div class="container" >
 						<div class="row">
 							<div class="col-lg-8 mx-auto">
 								<div class="modal-body">
 									<!-- Project Details Go Here -->
 									<h2>Glacial Drone Research</h2>
-									<p class="item-intro text-muted">Scientific research with a UAV done in Nepal</p>
-									<img class="img-fluid d-block mx-auto" src="" alt="">
-									<p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
-										nostrum, reiciendis facere nemo!</p>
+									<p class="item-intro text-muted">Scientific research with a UAV done in Nepal. This reserach is published in Annals of Glaciology: <a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/836B5F297408CC02130D7AC86B214338/S0260305500000124a.pdf/seasonal_surface_velocities_of_a_himalayan_glacier_derived_by_automated_correlation_of_unmanned_aerial_vehicle_imagery.pdf">Seasonal surface velocities of a Himalayan glacier derived by automated correlation of unmanned aerial vehicle imagery</a></p>		
+									<img class="img-fluid d-block mx-auto" src="https://geodev.nl/img/nepal%20(1).jpg" alt="Lirung Glacier">
+									<p class="text-muted">The lirung (7234m) with the lirung glacier. It is debris covered (see grey river).</p>
+									<p>The goal of this research is -still- to check the flow of the Lirung  glacier in Nepal. This can be done by flying with a Drone/UAV (unmanned aerial vehicle) a few times a year and record a arial-image. On these images the big boulders and stones of the Lirung can be track and traced. With cross-correlation the movements over time can be found. We reviewed types of correlation models and compare these with the ground-truth. These were done by hand. Further research included finding the best interpolation. This resulted in a human readable map</p>					
+									<img class="img-fluid d-block mx-auto" src="https://geodev.nl/img/nepal_2.jpg" alt="Glacier flow">
+									<p>All of this is done with remote sensing software ENVI. Because this research is continuing for a long time, everything is written in programming code IDL (Interactive Data Language) </p>
+			
+			
+			
 									<ul class="list-inline">
 										<li>Date: January 2017</li>
 										<li>Client: Utrecht University</li>
@@ -407,17 +396,20 @@
 							<div class="col-lg-8 mx-auto">
 								<div class="modal-body">
 									<!-- Project Details Go Here -->
-									<h2>Schiphol Wayfinding API</h2>
+									<h2>Schiphol Geo API</h2>
+									<h3>1 IMDF</h3>
+									<p>Apple designed a standard format for indoor buildings like airports called <a href="https://register.apple.com/resources/imdf/"> IMDF</a>. We worked closely with Apple Maps and <a href="https://www.safe.com/integrate/indoor-mapping-data-format-imdf/">Safe Software</a> (FME) to build the schiphol IMDF. The conversion from Schiphol data into IMDF is quite complex and ended up in a workspace that exsists of more than 500+ transfomers!</p>
+									<h3>2 Wayfinding API</h3>
 									<p class="item-intro text-muted">A public endpoint for indoor routing and PointOfInterests</p>
 									<img class="img-fluid d-block mx-auto" src="" alt="">
 									<p>In this project, is two-fold. On one hand a new version of the python code of the API and dockerization. On the other hand creation of a GeoWeb (geocortex) website for maintaining the Points/Area of interests data. This data can be found in: Schiphol products (like mobile-apps, website), external Airliners (KLM, TUI) and other people. You can work with it aswel! See <a href="https://developer.schiphol.nl/">developer.schiphol.nl</a> </p>
-									<p>Wayfinding API is one of the few geo-API's. Two more:</p>
-									<h3>Beacon BLE</h3>
+			
+									<h3>3 Beacon BLE</h3>
 									<p>The beacon API let you enter Minor/Major/RSSI values, and as a result you get a lat-long position. This is not indoorpositioning (Iphone/Android) are way more advanced/better. But for tracking of assets within the terminal. The assets are  often connected to a LoRa network</p>
-									<h3>Location Tree</h3>
-									<p>This API is a uniform building/room/zones geolocator. </p>
+									<h3>4 Location Tree</h3>
+									<p>This API is a uniform building/room/zones geolocator. There were so many different room definitions on the airport. Ground floor has already 5000+ rooms. The API lets link assets onto a room. They store a UUID. With the API you can get a JSON-repesentative or rendered image of the room, and</p>
 									<ul class="list-inline">
-										<li>Date: 2019</li>
+										<li>Date: 2019 - 2020</li>
 										<li>Client: Royal Schiphol Group</li>
 									</ul>
 									<button class="btn btn-primary" data-dismiss="modal" type="button">
@@ -434,7 +426,7 @@
 		<!-- Bootstrap core JavaScript -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="js/bootstrap.min.js"></script>
 
 		<!-- Plugin JavaScript -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>

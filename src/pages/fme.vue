@@ -24,7 +24,7 @@
           <br>Automation, validation, read files without the required software (e.g. CAD) and even non-gis projects are possible in FME.
           <br><br> We like the makers of fme, Safe Software, If you want to know orientate, the best thing to do is to go to safe.com.
 
-          <a href="https://www.safe.com/" target="_blank"><q-img src="img/safecom.png" alt="Safe software"  style="max-height:50vh" contain /></a>
+          <a href="https://www.safe.com/" target="_blank"><q-img src="../assets/img/safecom.png" alt="Safe software"  style="max-height:50vh" contain /></a>
           <div class="light q-mb-xl"> The 3 of FME</div>
 
           ps. FME is everything for us. It can move mountains on the map atleast<br>

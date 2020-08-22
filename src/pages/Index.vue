@@ -174,13 +174,14 @@ export default {
         Wayofworking: 'DevOps, Scrum, Agile',
         Container: 'Docker, Kubernetes',
         FME: 'FME desktop, FME server, FME Cloud, Custom Transformers, python',
-        ESRI: 'ArcGIS Pro, ArcMap, Enterprise, GeoEvent, AGOL, ArcGIS server, Collector apps, GeoWeb, Arpcy, ArcGIS API for JavaScript',
+        ESRI: 'ArcGIS Pro, ArcMap, Enterprise, GeoEvent, AGOL, ArcGIS server, Collector apps, GeoWeb',
+        'ESRI Script': 'Arpcy, ArcGIS API for JavaScript, Jupyter Notebooks, ArcGIS API for Python',
         WebGIS: 'Geoserver, Openlayers, Mapbox (here on this site!), Leaflet',
         Opensource: 'PostGIS, PGrouting, OSRM, OSM, QGis, GeoPackages, OGC (wms &comma; wfs), Mapbox Vectortiles',
         Databases: 'Redis, Postgres, Oracle, SQL, mySQL',
         Website: 'HTML, JS, CSS, SASS, SCSS',
         APIs: 'Swagger, Rest',
-        DevTools: 'Git, Node, Jupyter Notebooks, vs code, pycharm, fork',
+        DevTools: 'Git, Node, vs code, pycharm, fork',
         Platforms: 'Linux, Windows, Openshift'
       },
       portfolio: [
@@ -376,12 +377,6 @@ section
   transform: scale(1.2);
   margin-bottom: 10px;
   min-height: 90px;
-
-a
-  color: $primary;
-  text-decoration: none;
-  &:hover
-    color: $secondary;
 
 .q-card
   min-width: $maxwidth/4

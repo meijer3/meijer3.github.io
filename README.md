@@ -1,26 +1,7 @@
-# geodev (geodev)
+# Hej
 
-geodev website
+Welcome in our GIT repository. Take a look around. We build this website with Vue JS and Quasar framework. The builded version is inside `dist\spa` while the main code (the one we wrote) is in `src`.
 
-## Install the dependencies
-```bash
-npm install
-```
+If you have any questions, take a look at:
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
-
-### Lint the files
-```bash
-npm run lint
-```
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+[The website: geodev.nl](https://geodev.nl)

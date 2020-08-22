@@ -1,10 +1,10 @@
 <template>
   <q-page-container  class="fit row wrap justify-center items-start content-start text-center" style="padding: 0 0 0 0 !important">
-    <section class="headerimg" title="ArcGIS pro render of the GIS Lights of Schiphol" />
     <router-view />
-    <q-page style="padding-top:0;">
+    <!-- <q-page style="padding-top:0; width:100vw"> -->
       <!-- Header -->
 
+    <section class="headerimg" title="ArcGIS pro render of the GIS Lights of Schiphol" />
       <!-- Services -->
       <section id="services" class="q-py-xl" >
         <div class="container">
@@ -12,42 +12,41 @@
           <h3 class="section-subheading light">What we do as GeoDev</h3>
           <div class="fit row wrap justify-center items-start content-start text-center">
             <div class="col-4">
-              <q-img src="https://github.com/meijer3/meijer3.github.io/raw/master/img/avatatars-04.png"/>
+              <q-img src="../assets/avatars/avatatars-04.png"/>
               <h4>GIS developer</h4>
               <p>We develop in Javascript/Typescript/Python. We know open-source webviewers/Esri products</p>
             </div>
             <div class="col-4">
-              <q-img  src="https://github.com/meijer3/meijer3.github.io/raw/master/img/avatatars-01.png"/>
+              <q-img  src="../assets/avatars/avatatars-01.png"/>
               <h4>FME trainer & specialist</h4>
               <p>We can give offical FME trainings. We are certified trainer. We can also review. Our trainer has offical Safe FME <a target="_blank" href="https://www.sweco.nl/nieuws/nieuwsartikelen/special-recognition-award-voor-fme-professional-sander-meijer/"> special recognition</a> award.</p>
             </div>
             <div class="col-4">
-                <q-img src="https://github.com/meijer3/meijer3.github.io/raw/master/img/avatatars-05.png" style="margin-left: 35px;" />
+                <q-img src="../assets/avatars/avatatars-05.png" style="margin-left: 35px;" />
               <h4>Analyst</h4>
               <p>We prepair data, make it visible, so conclusions can be made by experts</p>
             </div>
 
           </div>
 
-        <div class="row" style="margin-top:60px;">
-                <div class="col-sm-3 fme-icon" ></div>
-                <div class="col-sm-2 fme-icon" style="background-image:url('https://images.safe.com/logos/fme/fme-certified-professional.png');"></div>
-                <div class="col-sm-2 fme-icon" style="background-image:url('https://images.safe.com/logos/fme/fme-certified-trainer.png');"></div>
-                <div class="col-sm-2 fme-icon" style="background-image:url('https://images.safe.com/logos/fme/fme-certified-server.png');"></div>
+          <div class="row q-mb-xl" style="margin-top:60px;">
+                  <div class="col-sm-3 fme-icon" ></div>
+                  <div class="col-sm-2 fme-icon" style="background-image:url('https://images.safe.com/logos/fme/fme-certified-professional.png');"></div>
+                  <div class="col-sm-2 fme-icon" style="background-image:url('https://images.safe.com/logos/fme/fme-certified-trainer.png');"></div>
+                  <div class="col-sm-2 fme-icon" style="background-image:url('https://images.safe.com/logos/fme/fme-certified-server.png');"></div>
 
-              </div>
-              </div>
+          </div>
+        </div>
       </section>
 
-      <br><br>
       <!-- Map Example-->
       <section style="background:#333">
           <Mapbox />
       </section>
-      <br><br>
+
       <!-- Portfolio -->
       <section class="q-py-xl" id="portfolio">
-        <div class="container">
+        <div class="container q-mt-xl" >
           <h2 class="section-heading">Portfolio</h2>
           <h3 class="section-subheading light">A few of the many projects done.</h3>
 
@@ -91,7 +90,7 @@
 
               <div class="team-member col-4" onclick="window.open('https://nl.linkedin.com/in/swmeijer', '_blank')">
                 <q-avatar style="border: 7px solid rgba(0, 0, 0, 0.1)">
-                  <img class="rounded-circle" src="avatars/sander.png" alt="">
+                  <img class="rounded-circle" src="../assets/avatars/sander.png" alt="">
                 </q-avatar>
                 <h4>Sander Meijer</h4>
                 <p class="text-muted">Freelance Developer / Trainer / Analyst</p>
@@ -130,7 +129,7 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-4 text-right">
-              <span class="copyright">Copyright &copy; GeoDev 2019-{{new Date().getFullYear()}}</span>
+              <span class="copyright">Copyright &copy; GeoDev 2016-{{new Date().getFullYear()}}</span>
             </div>
             <div class="col-4">
               <q-btn class="q-mb-md" round color="primary" icon="fab fa-linkedin-in" @click="linkedin('swmeijer')" />
@@ -138,27 +137,26 @@
             <div class="col-4  text-left">
               <span class="copyright" @click="credits = true" >Credits & Disclaimer</span>
               <q-dialog v-model="credits">
-              <q-card><q-card-section><div class="text-h6">Credits & Disclaimer</div></q-card-section>
-              <q-card-section class="q-pt-none">We don't own any of these products used on this website. This site is to show which technologies we use or have build. Any of the products (such as Schiphol Wayfinding) are only intented to show what we are capable of. There are no commerical models behind them.
-                <br><br>We are gladly making use of open-soucre and open-data!
-              </q-card-section>
-              <q-card-actions align="right"><q-btn flat label="OK" color="primary" v-close-popup /></q-card-actions>
-              </q-card>
+                <q-card><q-card-section><div class="text-h6">Credits & Disclaimer</div></q-card-section>
+                <q-card-section class="q-pt-none">We don't own any of these products used on this website. This site is to show which technologies we use or have build. Any of the products (such as Schiphol Wayfinding) are only intented to show what we are capable of. There are no commerical models behind them.
+                  <br><br>We are gladly making use of open-soucre and open-data!
+                </q-card-section>
+                <q-card-actions align="right"><q-btn flat label="OK" color="primary" v-close-popup /></q-card-actions>
+                </q-card>
             </q-dialog>
-
             </div>
+            <div class="col-12 q-mt-md text-muted" >ps. Interested in how we code?<br> Take a look at this page on <a href="https://github.com/meijer3/meijer3.github.io" target="_blank"> https://github.com/meijer3/meijer3.github.io</a></div>
           </div>
         </div>
       </section>
 
-    </q-page>
+    <!-- </q-page> -->
   </q-page-container>
 </template>
 
 <script>
 import { openURL } from 'quasar'
 import Mapbox from '../components/mapbox.vue'
-import Scroller from '../components/scroller.vue'
 
 export default {
   name: 'MainPage',
@@ -176,7 +174,7 @@ export default {
         Wayofworking: 'DevOps, Scrum, Agile',
         Container: 'Docker, Kubernetes',
         FME: 'FME desktop, FME server, FME Cloud, Custom Transformers, python',
-        ESRI: 'ArcGIS Pro, ArcMap, Enterprise, GeoEvent, AGOL, ArcGIS server, Collector apps, GeoWeb, Arpcy, APIs',
+        ESRI: 'ArcGIS Pro, ArcMap, Enterprise, GeoEvent, AGOL, ArcGIS server, Collector apps, GeoWeb, Arpcy, ArcGIS API for JavaScript',
         WebGIS: 'Geoserver, Openlayers, Mapbox (here on this site!), Leaflet',
         Opensource: 'PostGIS, PGrouting, OSRM, OSM, QGis, GeoPackages, OGC (wms &comma; wfs), Mapbox Vectortiles',
         Databases: 'Redis, Postgres, Oracle, SQL, mySQL',
@@ -221,8 +219,7 @@ export default {
     }
   },
   components: {
-    Mapbox,
-    Scroller
+    Mapbox
   },
   methods: {
     linkedin (user) {
@@ -249,7 +246,7 @@ export default {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-  background-image: url(/img/header.png);
+  background-image: url(../assets/img/header.png);
   height: 60vh;
   width: 100vw;
 
@@ -258,6 +255,7 @@ section
   align-items: center;
   background: white;
   display: flex;
+  // width: 100vw;
   width: 100vw;
   position: relative;
 
@@ -358,13 +356,13 @@ section
 .team-member
   padding: 50px
   text-align: center
-  background: #efefef
+  background: #fff
   max-width: 310px;
   margin: 0 auto;
   border-radius: 6px
   transition: 0.2s
   &:hover
-    background: #fff
+    background: #efefef
     cursor: pointer
 
 .q-avatar

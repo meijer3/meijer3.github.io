@@ -23,8 +23,8 @@
             </div>
           <div class="light q-mb-xl"> Borehole with filling. 100% FME, no human interaction involved</div>
 
-        With OGC we can actually read (alot of times) the scale of the graph. Therefore we also know more or less the hight of the boreholes and there ID. Unfortunalyl this project had mixed up IDs in a overview card so there was some manual mapping done to match this. Eventually FME could output to this format called '.GEF' which was text based.
-        <br><br> This project was only a succes because it was not meant to be 100% accurate. A wild guess on our side, we think that the sediment in the boreholes where correct on major scale. Not every sediment was map correctly but that was not nesseasry. <br>We like this project because it is an eye-opener for alot of people. FME is way more powerfull than GIS only. GIS was only a small part in this project (and mainly done by hand). FME functioned here as object aware, rulebased borehole reader.
+        With OGC we can actually read (a lot of times) the scale of the graph. Therefore we also know more or less the height of the boreholes and there ID. Unfortunately this project had mixed up IDs in a overview card so there was some manual mapping done to match this. Eventually FME could output to this format called '.GEF' which was text based.
+        <br><br> This project was only a success because it was not meant to be 100% accurate. A wild guess on our side, we think that the sediment in the boreholes where correct on major scale. Not every sediment was map correctly but that was not necessary. <br><br>We like this project because it is an eye-opener for a lot of people. FME is way more powerful than GIS only. GIS was only a small part in this project (and mainly done by hand). FME functioned here as object aware, rule based borehole reader.
 
         <q-img src="img/boring_3.png" alt="A borehole sheet example"  style="max-height:50vh" contain  class="col-12" />
         <div class="light q-mb-xl"> Final product (1 out of 1400) in a GEF viewer</div>

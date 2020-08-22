@@ -11,19 +11,17 @@
         <div class="light">This is the project Sander won his once in 3 years <a target="_blank" href="https://www.sweco.nl/nieuws/nieuwsartikelen/special-recognition-award-voor-fme-professional-sander-meijer/"> special recognition</a> award</div>
         <br><br>
 
-          In the Netherlands we have a lot of dikes. For this one project at we needed data from 1400 boreholes, because they wanted to move the dike. The problem: The previous data everything was based on was analog PDFs and JPGs. The data itself is from 1980s.
+         A government organization needed an input map for their process to calibrate the C2000 system. (Communications used by police, ambulances, military, firefighters). The input map says more or less what kind of 'radio-wave-resistance' is in certain area. The result map is down below. Altho the real end product has way smaller pixels and more detailed information. For security reasons is a other render used.
             <q-img src="img/c2000_1.jpg" alt="A borehole sheet example"  style="max-height:50vh"  />
-          <div class="light q-mb-xl"> A typical sheets with analog boreholes.</div>
+          <div class="light q-mb-xl"> Different categories like: open fields, high urban, low urban, forest, fresh water, salt water</div>
 
-          With FME we could change these PDFs and JPEGs into map of pixels (and thus) geometric shapes. With our own rules we mapped vertical lines and horizontal lines. With even more rules we could figure out what the different filling meant.
+          This project is purely based on open-data products of PDOK. The calculating process is so heavy, that we used sheets (dutch: Kaartbladen) to calculate parts of the Netherlands. They are merged later into one map. We are talking about hundreds of gigabytes. The FME workspace was designed to work with sub-processes and where possible in parallel. (Nowadays this is the perfect showcase for FME Cloud!)
             <q-img src="img/c2000_2.png" alt="A borehole sheet example"  style="max-height:50vh" contain  class="col-4" />
-          <div class="light q-mb-xl"> Borehole with filling. 100% FME, no human interaction involved</div>
+          <div class="light q-mb-xl"> 'Kaartbladen' according to the AHN</div>
 
-        With OGC we can actually read (alot of times) the scale of the graph. Therefore we also know more or less the hight of the boreholes and there ID. Unfortunalyl this project had mixed up IDs in a overview card so there was some manual mapping done to match this. Eventually FME could output to this format called '.GEF' which was text based.
-        <br><br> This project was only a succes because it was not meant to be 100% accurate. A wild guess on our side, we think that the sediment in the boreholes where correct on major scale. Not every sediment was map correctly but that was not nesseasry. <br>We like this project because it is an eye-opener for alot of people. FME is way more powerfull than GIS only. GIS was only a small part in this project (and mainly done by hand). FME functioned here as object aware, rulebased borehole reader.
-
+        Sander handed in this workspace for his fme-professoinal certificate. He received his award because of the many different inputs from PDOK and the size and complexity of the script.
         <q-img src="img/c2000_3.png" alt="A borehole sheet example"  style="max-height:50vh" contain  class="col-12" />
-        <div class="light q-mb-xl"> Final product (1 out of 1400) in a GEF viewer</div>
+        <div class="light q-mb-xl"> FME script</div>
 
           <span class="foot-tags">Date: 2016<br>
       Client: Sweco</span>

@@ -10,7 +10,7 @@
 
         <div class="light">It is similar to the PDOK viewer + your own data + all other public data </div>
         <br><br>
-          Datalab is a viewer (original based on GeoWeb) that allows you to download any public data. It is made for people that have no GIS knowledge.
+          Datalab is a viewer (original based on GeoWeb) that allows you to download any public data. It is made for people that have no GIS knowledge. User follow 4 simple steps
 
             <ul class="text-center" style="margin:20px auto 0 ; width:680px;  list-style: decimal;">
                 <li class="text-left" ><span>Search:</span> for a dataset by keywords, title or tags</li>
@@ -19,9 +19,8 @@
                 <li class="text-left" ><span>Download:</span> and spend your saved time on your project</li>
             </ul>
 
-            Which these 4 steps everyone can download data. You dont need to know what kind of format it is. Any techincal download limits are taken care of by FME. Datalab is more or less, one script that reads all public datasets and allows you to map it back to anything you wnat. For example a BAG shapfile used in Adobe illustartor or a AHN3 into CAD in a TIN format.
+Which these 4 steps everyone can download data and convert it to what uou need. You don’t need to know what kind of format it is. Any technical download limits are taken care of by FME. Datalab is more or less, one script that reads all public datasets and allows you to map it back to anything you want. For example a BAG shapfile used in Adobe illustrator or a AHN3 into CAD in a TIN format. Examples of public sites are:
 
-            Examples of public sites are:
             <ul class="text-center" style="margin:20px auto 0 ; width:680px;  list-style: none;">
                 <li class="text-left" >
                     <span>ArcGIS rest</span>
@@ -45,7 +44,7 @@
                     <span>Other</span>
                     <ul>
                         <li class="text-left" ><a href="https://www.rijkswaterstaat.nl/apps/geoservices/geodata/dmc/dtb/geogegevens/cad/" target="_blank">Rijkswaterstaat DTB CAD drawings, in datalab you download your extent, not 'kaartbladen'</a></li>
-                        <li> There are so many datasets avaidable. If you know where to find it. It can actually overwelming</li>
+                        <li> There are so many datasets available. If you know where to find it. It can actually overwhelming</li>
                     </ul>
                 </li>
             </ul>

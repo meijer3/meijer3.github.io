@@ -7,9 +7,9 @@
         </q-card-section>
 
         <q-card-section  style="max-height: calc(100% - 72px);" class="scroll"  >
-            Schiphol Wayfinding exsists of serveral parts. Every part is a project by it self.
+            Schiphol 'Wayfinding'-API exists of several parts. Every part is a project by it self.
             <ul class="text-center" style="margin:20px auto 0 ; width: 380px;  list-style: decimal;">
-                <li class="text-left" >A public Basemap IMDF</li>
+                <li class="text-left" >A public Basemap IMDF (Indoor Map)</li>
                 <li class="text-left" >Wayfinding API</li>
                 <li class="text-left" >Mesh network</li>
                 <li class="text-left" >BLE (Bluetooth beacons)</li>
@@ -17,20 +17,19 @@
             </ul>
 
             <h2>1 IMDF</h2>
-            <h3> <a href="https://register.apple.com/resources/imdf/">Indoor Mapping Data Format</a> is becomming the new OGC standard for indoor GIS (At time of writing it still a <a href="https://www.ogc.org/standards/requests/202"> OGC request</a>) </h3>
+            <h3> <a href="https://register.apple.com/resources/imdf/">Indoor Mapping Data Format</a> is becoming  the new OGC standard for indoor GIS <br>(At time of writing it still a <a href="https://www.ogc.org/standards/requests/202"> OGC request</a>) </h3>
 
-            Apple designed a standard format for indoor buildings like airports called <a href="https://register.apple.com/resources/imdf/"> IMDF</a>. We worked closely with Apple Maps and <a href="https://www.safe.com/integrate/indoor-mapping-data-format-imdf/">Safe Software</a> (FME) to build the schiphol IMDF. The conversion from Schiphol data into IMDF is quite complex and ended up in a workspace that exsists of more than 500+ transfomers! During the project this decreased due to changes in the workflow. Schiphol maintained the data closer to the 'Aiport API'-model that is based on IMDF. In the end, less mappings (such as categories) were needed.
+            Apple designed a standard format GIS for indoor buildings like airports called: <a href="https://register.apple.com/resources/imdf/"> IMDF</a>. We worked closely with Apple Maps and <a href="https://www.safe.com/integrate/indoor-mapping-data-format-imdf/">Safe Software</a> (FME) to build the Schiphol IMDF. The conversion from Schiphol data into IMDF is quite complex and ended up in a workspace that exists  of more than 500+ transformers! During the project this decreased due to changes in the workflow. We changed how Schiphol maintained their data and followed the 'Airport API'-model that is based on IMDF. Therefore were less mappings (such as categories) needed in the end.
             <q-img alt="Apples IMDF on a iphones" style="max-height:50vh"   src="img/imdf_apple.jpg" />
-            <div class="light"> IMDF seen on an Iphone at Apple maps</div>
+            <div class="light"> IMDF seen on an iphone at Apple maps</div>
 
             <h2>2 Wayfinding API</h2>
-            <h3>A public endpoint for indoor routing and PointOfInterests</h3>
+            <h3>A public API endpoint for indoor routing and PointOfInterests</h3>
 
-            In this project, is two-fold.
+            This project exists  of two parts.
+            <br><br>On one hand we build a new version of the API (Python) and dockerized that. Developing is locally  on a laptop, after that the code pushed into a git repository, build and mounted on the staging environment. After unit-testing and endpoint testing its published to the <a href="https://www.google.com/search?q=green+blue+architecture">green-blue production</a>. The self-serve-units on Schiphol in the terminal and airliners such as KLK make use of this routing. The API returns -in OSRM format- a walking line and times.
 
-            <br><br>On onehand we build a new version of the API (Python) and dockerization. Developing is localy on a laptop. The data pushed into a git repostory, build and mounted on the staging environment. After unit-testing and endpoint testing its published to the <a href="https://www.google.com/search?q=green+blue+architecture">green-blue production</a>. The self-serve-units on schiphol in the terminal and airliners such as KLK make use of this routing. The API returns in OSRM format a walking line and times.
-
-            <br><br>On the other hand creation of a GeoWeb (geocortex) website for maintaining the Points/Area of interests data. This data can be found in: Schiphol products (like mobile-apps, website), external Airliners (KLM, TUI) and other people.
+            <br><br>On the other hand we created a GeoWeb (geocortex) website for maintaining the Points/Area of interests data. This data can be found in: Schiphol products (like mobile-apps, website), external Airliners (KLM, TUI) and other people.
 
             <br><br> See main page for a real life demo!
             <br><br>You can play with this data at <a href="https://developer.schiphol.nl/">developer.schiphol.nl</a>
@@ -38,19 +37,19 @@
             <h2>3 Mesh network</h2>
             <h3>The network behind the API</h3>
 
-            To create an indoor 'route' network. We rendered (with FME) a so called mesh-network. It is corrected on the building orientations. Its is weighted in susch a way that it follows the original pricewinning analog schiphol wayfinding.
-            It includes zones, such as: One-way-filters, different security clearances, dirty/clean passagiers and Internatial/Schengen
+            To create an indoor 'route' network, we rendered (with FME) a so called mesh-network. It is corrected on the building orientations so the meshnetwork is aligned with how people actually walk in rooms. It is weighted in such a way that it follows the original price winning analog schiphol wayfinding.
+            It includes zones, such as: One-way-filters, different security clearances, dirty/clean passengers and international/Schengen
 
             <q-img alt="FME generated Meshnetwork on IMDF" style="max-height:50vh"   src="img/mesh.png" />
-            <div class="light"> It is autogenerated on IMDF </div>
+            <div class="light"> It is autogenerated on IMDF with FME</div>
 
             <h2>4 Beacon BLE</h2>
-            The beacon API let you enter Minor/Major/RSSI values, and as a result you get a lat-long position. This is not indoorpositioning (Iphone/Android) are way more advanced/better. But for tracking of assets within the terminal. The assets are  often connected to a LoRa network
+            The beacon API let you enter Minor/Major/RSSI values, and as a result you get a lat-long position. This is not directly used for indoorpositioning, because  Iphones/Androids are way more advanced/better. This API aims for high-amount-low-budget sensors for tracking of assets within the terminal. The assets are often connected to a LoRa network
             <q-img alt="Beacons bluetooth" style="max-height:50vh"   src="/img/beacons.png" />
-            <div class="light"> Black is the 'blue dot' and thus the calculated position, based on the green bluetooth sensors. The blue cross is the realworld location </div>
+            <div class="light"> Black is the 'blue dot' and thus the calculated position, based on the green Bluetooth sensors. The blue cross is the real world location </div>
 
             <h2>5 Location Tree</h2>
-            This API is a uniform building/room/zones geolocator. There were so many different room definitions on the airport. Ground floor has already 5000+ rooms. The API lets link assets onto a room. They store a UUID. With the API you can get a JSON-repesentative or rendered image of the room, and
+            This API is a uniform building/room/zones geolocator. There were so many different room definitions on the airport. Ground floor of the terminal has already 5000+ rooms. The API lets link assets onto a room. They store a UUID. With the API you can get a JSON-representative or rendered image of the room, and
 
             <span class="foot-tags">Date: 2019 - 2020<br>
             Client: Royal Schiphol Group</span>

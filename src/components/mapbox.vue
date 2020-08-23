@@ -53,9 +53,9 @@ export default {
     }
   },
   mounted () {
-    this.callAPI().then((data) => {
-      console.log(data)
-    }).catch(e => { console.error(222, e) })
+    // this.callAPI().then((data) => {
+    //   console.log(data)
+    // }).catch(e => { console.error(222, e) })
     this.map = new mapboxgl.Map({
       container: this.$refs.map,
       style: 'mapbox://styles/mapbox/dark-v10',

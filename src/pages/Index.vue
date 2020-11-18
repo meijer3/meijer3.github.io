@@ -24,7 +24,7 @@
             <div class="col-4">
                 <q-img src="../assets/avatars/avatatars-05.png" style="margin-left: 35px;" />
               <h4>Analyst</h4>
-              <p>We prepair data, make it visible, so conclusions can be made by experts</p>
+              <p>We prepare data, make it visible, so conclusions can be made by experts</p>
             </div>
 
           </div>
@@ -69,7 +69,7 @@
               <li><b>Audith of FME</b> usage at Prorail and Rijkswaterstaat</li>
               <li><b>Schiphol <a href="https://register.apple.com/resources/imdf/">IMDF</a></b> (Apple's/Standard indoor map format) with FME. So Schiphol indoor in Apple's maps on your Iphone</li>
               <li><a href="https://www.sweco.nl/nieuws/nieuwsartikelen/special-recognition-award-voor-fme-professional-sander-meijer/">Special recgonition</a> FME Award by Safe</li>
-              <li>Univerisal script to calculate the <a href="https://ruimtelijkeadaptatie.nl/hulpmiddelen/staat-straat/">'Staat van je Straat'</a></li>
+              <li>Universal script to calculate the <a href="https://ruimtelijkeadaptatie.nl/hulpmiddelen/staat-straat/">'Staat van je Straat'</a></li>
               <li>Make a sync databse for Ruimtelijke Plannen (RO)</li>
               <li>Smart mobility project</li>
               <li>Digitalisation of Dutch 'KLIC meldingen' (.png files) </li>
@@ -187,32 +187,32 @@ export default {
       portfolio: [
         {
           title: 'Does the glacier retreat?',
-          img: 'img/nepal_thumb.jpg',
+          img: 'thumbs/thumb-01.svg',
           subtitle: 'Drones in Himalaya',
           url: 'glacier'
         }, {
           title: 'Go to your gate',
-          img: 'img/wayfinding_thumb.jpg',
+          img: 'thumbs/thumb-02.svg',
           subtitle: 'Wayfinding on Schihol API',
           url: 'wayfinding'
         }, {
           title: 'How rough is Holland?',
-          img: 'img/c2000__thumb.jpg',
+          img: 'thumbs/thumb-03.svg',
           subtitle: 'Input map to tweak radio coms',
           url: 'c2000'
         }, {
           title: 'No humans involved',
-          img: 'img/boring_thumb.jpg',
+          img: 'thumbs/thumb-04.svg',
           subtitle: 'Digitalization of 1980\'s boreholes',
           url: 'boring'
         }, {
           subtitle: 'Feature Manipulation Engine',
-          img: 'img/training_thumb.jpg',
-          title: 'Offical Trainer for FME courses',
+          img: 'thumbs/thumb-05.svg',
+          title: 'Official Trainer for FME courses',
           url: 'fme'
         }, {
           title: 'Download GIS the easy way',
-          img: 'img/datalab_thumb.jpg',
+          img: 'thumbs/thumb-06.svg',
           subtitle: 'ArcGIS, PDOK, Waterschapsdata',
           url: 'datalab'
         }

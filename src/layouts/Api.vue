@@ -11,8 +11,8 @@ export default {
   data () {
     return {
       data: 123,
-      appId: '6b2a69e',
-      appKey: 'c87b11c9a340f6604cf737d2f6532cd'
+      appId: '333',
+      appKey: '333'
     }
   },
   mounted  () {

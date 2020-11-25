@@ -129,17 +129,17 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-4 text-right">
-              <span class="copyright">Copyright &copy; GeoDev 2016-{{new Date().getFullYear()}}</span>
+              <span class="copyright">Copyright &copy; GeoDev 2016-{{new Date().getFullYear()}}<br>kvk: 80974457</span>
             </div>
             <div class="col-4">
               <q-btn class="q-mb-md" round color="primary" icon="fab fa-linkedin-in" @click="linkedin('swmeijer')" />
             </div>
-            <div class="col-4  text-left">
-              <span class="copyright" @click="credits = true" >Credits & Disclaimer</span>
+            <div class="col-4  text-left credits">
+              <span  @click="credits = true" >Credits & <br>Disclaimer</span>
               <q-dialog v-model="credits">
-                <q-card><q-card-section><div class="text-h6">Credits & Disclaimer</div></q-card-section>
+                <q-card><q-card-section><div class="text-h6 ">Credits & Disclaimer</div></q-card-section>
                 <q-card-section class="q-pt-none">We don't own any of these products used on this website. This site is to show which technologies we use or have build. Any of the products (such as Schiphol Wayfinding) are only intented to show what we are capable of. There are no commerical models behind them.
-                  <br><br>We are gladly making use of open-soucre and open-data!
+                  <br><br>We are gladly making use of open-soucre and open-data! Logos are  adjusted to fit the color
                 </q-card-section>
                 <q-card-actions align="right"><q-btn flat label="OK" color="primary" v-close-popup /></q-card-actions>
                 </q-card>
@@ -238,6 +238,10 @@ export default {
 //   max-height: 0px
 //   .router-active
 //     max-height: auto
+.credits
+  cursor: pointer
+  &:hover
+    opacity: 0.7
 
 .headerimg
   display: block;

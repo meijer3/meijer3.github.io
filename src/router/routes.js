@@ -26,6 +26,10 @@ const routes = [
     path: '/json',
     component: () => import('pages/json2py.vue')
   },
+  {
+    path: '/reisadvies',
+    component: () => import('pages/reisadvies.vue')
+  },
   // Always leave this as last one,
   // but you can also remove it
   {

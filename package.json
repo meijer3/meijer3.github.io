@@ -9,7 +9,8 @@
     "lint": "eslint --ext .js,.vue ./",
     "dev": "quasar dev",
     "build": "quasar build",
-    "build:pwa": "quasar build -m pwa"
+    "build:pwa": "quasar build -m pwa",
+    "deploy": "push-dir --dir=dist/spa --remote=gh-pages --branch=master"
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.1",
@@ -22,6 +23,7 @@
     "leaflet": "^1.7.1",
     "mapbox-gl": "^1.12.0",
     "node-sass": "^4.14.1",
+    "push-dir": "^0.4.1",
     "quasar": "^1.0.0",
     "topojson": "^3.0.2",
     "vue-cesium": "^2.1.6",

@@ -10,7 +10,7 @@
     "dev": "quasar dev",
     "build": "quasar build",
     "build:pwa": "quasar build -m pwa",
-    "deploy": "push-dir --dir=dist/spa --remote=gh-pages --branch=master"
+    "deploy": "push-dir --dir=dist/spa --remote=gh-pages --cleanup --allow-unclean"
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.1",

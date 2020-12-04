@@ -1,35 +1,50 @@
 <template>
   <div style="width:100%;height:100%;">
-    <h2 class="absolute-top text-indigo-1 text-h4" style="z-index:5">Schiphol Wayfinding API
-    <q-btn  color="secondary" class="text-black" label="Edit" @click="drawer=!drawer" /></h2>
-
-    <q-drawer v-model="drawer" show-if-above elevated  >
-
-    <div class="q-pa-md  column" >
-      <q-toggle
-        v-model="spinning"
-        label="Spinning"
+    <h2 class="absolute-top text-indigo-1 text-h4" style="z-index:5">
+      Schiphol Wayfinding API
+      <q-btn
+        color="secondary"
+        class="text-black"
+        label="Edit"
+        @click="drawer = !drawer"
       />
-      <q-input bottom-slots v-model="start" label="From"  >
-        <template v-slot:before><q-icon name="place" /></template>
-        <template v-slot:append><q-icon name="close" v-if="start !== ''" @click="start = ''" class="cursor-pointer" /></template>
-      </q-input>
-      <q-input bottom-slots v-model="end" label="To"  >
-        <template v-slot:before><q-icon name="flight_takeoff" /></template>
-        <template v-slot:append><q-icon name="close" v-if="end !== ''" @click="end = ''" class="cursor-pointer" /></template>
-      </q-input>
-    </div>
+    </h2>
 
+    <q-drawer v-model="drawer" show-if-above elevated>
+      <div class="q-pa-md  column">
+        <q-toggle v-model="spinning" label="Spinning" />
+        <q-input bottom-slots v-model="start" label="From">
+          <template v-slot:before><q-icon name="place"/></template>
+          <template v-slot:append
+            ><q-icon
+              name="close"
+              v-if="start !== ''"
+              @click="start = ''"
+              class="cursor-pointer"
+          /></template>
+        </q-input>
+        <q-input bottom-slots v-model="end" label="To">
+          <template v-slot:before><q-icon name="flight_takeoff"/></template>
+          <template v-slot:append
+            ><q-icon
+              name="close"
+              v-if="end !== ''"
+              @click="end = ''"
+              class="cursor-pointer"
+          /></template>
+        </q-input>
+      </div>
     </q-drawer>
-    <div id="meijermap" ref="map"  v-intersection="onIntersection"></div>
+    <div id="meijermap" ref="map" v-intersection="onIntersection"></div>
   </div>
 </template>
 
 <script>
 import mapboxgl from 'mapbox-gl' // or "const mapboxgl = require('mapbox-gl');"
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2FuZGVybWVpamVyIiwiYSI6ImNrNjIwdDFpMjA2eTYza3Q2bGRibXlxNHIifQ.wiN3LYeCSfVswOH--fmrkA'
+mapboxgl.accessToken =
+  'pk.eyJ1Ijoic2FuZGVybWVpamVyIiwiYSI6ImNrNjIwdDFpMjA2eTYza3Q2bGRibXlxNHIifQ.wiN3LYeCSfVswOH--fmrkA'
 import { imdfStyler } from './publicbasemap.js'
-import * as turf from '@turf/turf'
+import length from '@turf/length'
 var polyline = require('@mapbox/polyline')
 import 'mapbox-gl/dist/mapbox-gl.css'
 
@@ -66,7 +81,11 @@ export default {
     window.map = this.map
     this.map.on('load', () => {
       // For styling only, remove all other labels and train tunnel
-      this.map.getStyle().layers.forEach(lyr => { if (lyr.type === 'symbol' || lyr.id.includes('pedestrian')) this.map.removeLayer(lyr.id) })
+      this.map.getStyle().layers.forEach(lyr => {
+        if (lyr.type === 'symbol' || lyr.id.includes('pedestrian')) {
+          this.map.removeLayer(lyr.id)
+        }
+      })
 
       this.loadRoute('foo', 'bar')
       this.loadLayer('/assets/easy.geojson')
@@ -74,7 +93,8 @@ export default {
       this.map.scrollZoom.setWheelZoomRate(0.02) // Default 1/450
 
       this.map.on('wheel', event => {
-        if (event.originalEvent.ctrlKey) { // Check if CTRL key is pressed
+        if (event.originalEvent.ctrlKey) {
+          // Check if CTRL key is pressed
           event.originalEvent.preventDefault() // Prevent chrome/firefox default behavior
           if (!this.map.scrollZoom._enabled) this.map.scrollZoom.enable() // Enable zoom only if it's disabled
         } else {
@@ -93,7 +113,12 @@ export default {
     rotateCamera: function (timestamp) {
       if (!this.spinning) return
       var step = Math.ceil((timestamp / 25) % this.route_lenght)
-      this.map.setPaintProperty('routepoint', 'line-dasharray', [0, step, 5, this.route_lenght])
+      this.map.setPaintProperty('routepoint', 'line-dasharray', [
+        0,
+        step,
+        5,
+        this.route_lenght
+      ])
       // console.log(step, (timestamp     / 100), (timestamp / 100) % this.route_lenght, timestamp)
 
       // clamp the rotation between 0 -360 degrees
@@ -106,7 +131,10 @@ export default {
         .then(res => res.json())
         .then(geojson => {
           // geojson.features = geojson.features.filter(f => f.properties.category !== 'aerial')
-          this.source = this.map.addSource('units', { type: 'geojson', data: geojson })
+          this.source = this.map.addSource('units', {
+            type: 'geojson',
+            data: geojson
+          })
           this.map.addLayer({
             id: 'units',
             type: 'fill',
@@ -129,9 +157,12 @@ export default {
                 var stepGeom = polyline.toGeoJSON(step.geometry)
                 var el = document.createElement('div')
                 el.className = 'marker marker-' + index
-                if (leg.steps.length === (index + 1)) geom = stepGeom
-                if (leg.steps.length === (index + 1) || index === 0) {
-                  new mapboxgl.Marker(el, { draggable: true }).setLngLat(stepGeom.coordinates[0]).addTo(this.map).on('dragend', this.markerMove)
+                if (leg.steps.length === index + 1) geom = stepGeom
+                if (leg.steps.length === index + 1 || index === 0) {
+                  new mapboxgl.Marker(el, { draggable: true })
+                    .setLngLat(stepGeom.coordinates[0])
+                    .addTo(this.map)
+                    .on('dragend', this.markerMove)
                 }
                 stepGeom.coordinates.map(e => e.push(step.maneuver.location[2]))
                 return stepGeom.coordinates
@@ -140,16 +171,35 @@ export default {
           })[0]
           geom.coordinates = geomCoords.flat()
           // console.log(routeobj)
-          var geojsons = [...new Set(geom.coordinates.map(e => e[2]))].map(f => { // 0, 10
-            var filteredGeom = JSON.parse(JSON.stringify(geom))
-            filteredGeom.coordinates = geom.coordinates.filter(e => e[2] === f).map(e => e.slice(0, 2))
-            return { type: 'Feature', geometry: filteredGeom, properties: { floor: f } }
-          })
+          var geojsons = [...new Set(geom.coordinates.map(e => e[2]))].map(
+            f => {
+              // 0, 10
+              var filteredGeom = JSON.parse(JSON.stringify(geom))
+              filteredGeom.coordinates = geom.coordinates
+                .filter(e => e[2] === f)
+                .map(e => e.slice(0, 2))
+              return {
+                type: 'Feature',
+                geometry: filteredGeom,
+                properties: { floor: f }
+              }
+            }
+          )
           geom.coordinates = geom.coordinates.map(c => c.slice(0, 2))
           var geojson = [{ type: 'Feature', geometry: geom }]
-          this.route_lenght = Math.ceil(turf.length(geom).toLocaleString() * 1000 / 5) // Devided by the width
-          this.map.addSource('route', { type: 'geojson', lineMetrics: true, data: { type: 'FeatureCollection', features: geojsons } })
-          this.map.addSource('routepoint', { type: 'geojson', lineMetrics: true, data: { type: 'FeatureCollection', features: geojson } })
+          this.route_lenght = Math.ceil(
+            (length(geom).toLocaleString() * 1000) / 5
+          ) // Devided by the width
+          this.map.addSource('route', {
+            type: 'geojson',
+            lineMetrics: true,
+            data: { type: 'FeatureCollection', features: geojsons }
+          })
+          this.map.addSource('routepoint', {
+            type: 'geojson',
+            lineMetrics: true,
+            data: { type: 'FeatureCollection', features: geojson }
+          })
 
           this.map.addLayer({
             id: 'route',
@@ -174,7 +224,10 @@ export default {
 
           var bounds = geom.coordinates.reduce(function (bounds, coord) {
             return bounds.extend(coord)
-          }, new mapboxgl.LngLatBounds(geom.coordinates[0], geom.coordinates[0]))
+          }, new mapboxgl.LngLatBounds(
+            geom.coordinates[0],
+            geom.coordinates[0]
+          ))
           this.map.fitBounds(bounds, {
             padding: 100
           })
@@ -182,8 +235,14 @@ export default {
     },
     markerMove: function (e) {
       var coords = e.target.getLngLat()
-      var str = `${Math.round(coords.lng * 1E6) / 1E6}, ${Math.round(coords.lat * 1E6) / 1E6}`
-      if (e.target.getElement().classList.contains('marker-0')) { this.start = str } else { this.end = str }
+      var str = `${Math.round(coords.lng * 1e6) / 1e6}, ${Math.round(
+        coords.lat * 1e6
+      ) / 1e6}`
+      if (e.target.getElement().classList.contains('marker-0')) {
+        this.start = str
+      } else {
+        this.end = str
+      }
     },
     callAPI: async function () {
       var url = 'https://api.schiphol.nl/wayfinding/poi/id/plaza'
@@ -196,8 +255,10 @@ export default {
         credentials: 'include', // include, *same-origin, omit
         // curl -X GET --header "Accept: application/json" --header "app_id: 6b2a69eb" --header "app_key: 3fa88dcf9e3d8fe1bc5744c838db056a" --header "resourceVersion: v3" "https://api.schiphol.nl/wayfinding/poi/id/plaza"
         headers: myHeaders
-      }).catch(e => { console.error(111, e) })
-      return response// .json()
+      }).catch(e => {
+        console.error(111, e)
+      })
+      return response // .json()
     }
   }
 }
@@ -221,5 +282,4 @@ export default {
   cursor: pointer
 .marker-0
   background-image: url('https://cdn.mapmarker.io/api/v1/pin?size=150&background=%23FCDC00&icon=fa-bicycle&color=%234D4D4D&voffset=0&hoffset=4&')
-
 </style>

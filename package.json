@@ -23,6 +23,8 @@
     "d3": "^6.2.0",
     "d3-geo-zoom": "^1.4.1",
     "leaflet": "^1.7.1",
+    "leaflet-ellipse": "^0.9.1",
+    "leaflet.geodesic": "^2.5.5-0",
     "mapbox-gl": "^1.12.0",
     "node-sass": "^4.14.1",
     "push-dir": "^0.4.1",
@@ -30,6 +32,7 @@
     "topojson": "^3.0.2",
     "vue-cesium": "^2.1.6",
     "vue2-leaflet": "^2.6.0",
+    "vue2-leaflet-movingmarker": "^1.1.0",
     "vue2-leaflet-vectorgrid": "^1.1.1"
   },
   "devDependencies": {

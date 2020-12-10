@@ -52,7 +52,10 @@
           id="tooltip"
           class="absolute q-py-sm q-ma-md"
         >
-          <div v-html="tooltip" class="dynamicText q-px-md" />
+          <div class="dynamicText q-px-md" @click="() => (this.clicked = true)">
+            <h1>{{ this.tooltipTitle }}</h1>
+            <h2 v-html="tooltip"></h2>
+          </div>
         </q-card>
         <q-dialog
           v-model="clicked"
@@ -141,19 +144,19 @@
               <div
                 class="fit row wrap justify-around   content-start betaalverzoekjes"
               >
-                <a href="https://tikkie.me/pay/2rrnp09r3drfohprnp2i"
+                <a :href="url_tikkie_25" ref="tikkie_25"
                   >Koffietje <br />~ 2.5 euro
                   <q-img
-                    src="https://u39639p35134.web0087.zxcs-klant.nl/reisadvies/tikkie_25.png"
+                    src="https://storage.googleapis.com/geodev.nl/reisadvies/tikkie_open.png"
                     target="_blank"
                     title="Fijn betaalverzoek"
                   />
                 </a>
-                <a href="https://tikkie.me/pay/2rrnp09r3drfohprnp2i"
+                <a :href="url_tikkie_open" ref="tikkie_open"
                   >Doneer wat je wilt, <br />
                   meer of minder!
                   <q-img
-                    src="https://u39639p35134.web0087.zxcs-klant.nl/reisadvies/tikkie_open.png"
+                    src="https://storage.googleapis.com/geodev.nl/reisadvies/tikkie_open.png"
                     target="_blank"
                     title="Geweldig betaalverzoek"
                   />
@@ -205,10 +208,13 @@ export default {
       imageDialog: false,
       home: [52.4, 4.9],
       destination: [52.5, 4.8],
+      tooltipTitle: null,
       tooltip: null,
       direction: true,
       destinationCountry: { properties: { 'main.location': 'start' } },
       clicked: false,
+      url_tikkie_25: '#',
+      url_tikkie_open: '#',
       attribution:
         '&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors | <a href="">MinBuZa</a>',
       defaultStyle: {
@@ -279,17 +285,15 @@ export default {
         parseFloat(feature['city.y']),
         parseFloat(feature['city.x'])
       ]
-
-      this.tooltip = `
-          <h1>${feature['main.location']}</h1>
-          <h2>${this.colorFlag(feature.code_totaal)}</h2>
-          `
+      this.tooltipTitle = `${feature['main.location']}`
+      this.tooltip = `${this.colorFlag(feature.code_totaal)}`
 
       this.features = Object.entries(layer._map._layers)
         .filter(a => a[1].feature)
         .filter(a => a[1].feature.properties['main.id'] === feature['main.id'])
         .map(a => a[1])
 
+      this.destinationCountry = layer.feature
       this.features.forEach(l => {
         l.setStyle({
           weight: 3,
@@ -307,9 +311,7 @@ export default {
       })
     },
     mouseClick (e) {
-      var layer = e.target
       this.clicked = true
-      this.destinationCountry = layer.feature
       this.features.forEach(l => {
         l.setStyle({
           weight: 3,
@@ -496,10 +498,19 @@ export default {
       //   steps: 8
       // }).addTo(this.map)
       this.loadD3()
+
+      fetch(
+        'https://storage.googleapis.com/geodev.nl/reisadvies/tikkie_open.txt'
+      )
+        .then(r => r.text())
+        .then(url => (this.url_tikkie_open = url))
+      fetch('https://storage.googleapis.com/geodev.nl/reisadvies/tikkie_25.txt')
+        .then(r => r.text())
+        .then(url => (this.url_tikkie_25 = url))
     })
     //
     const response = await fetch(
-      'https://u39639p35134.web0087.zxcs-klant.nl/reisadvies/world.geojson'
+      'https://storage.googleapis.com/geodev.nl/reisadvies/world.geojson'
     )
     // const response = await fetch('../assets/world.geojson')
     const data = await response.json()

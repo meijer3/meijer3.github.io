@@ -52,7 +52,7 @@
         <q-card
           class="fixed z-top bg-primary text-white q-py-xs q-px-md q-mt-xl "
           >&nbsp;&nbsp;&nbsp;&nbsp;Json
-          {{ this.json2Py ? '&rarr' : '&larr' }} Python</q-card
+          {{ this.json2Py ? '&rarr;' : '&larr;' }} Python</q-card
         >
       </q-page>
 
@@ -170,7 +170,7 @@ export default {
   }
 }
 </script>
-<style lang="sass">
+<style lang="sass" scoped>
 body
   font-family: 'Ubuntu'
   font-size: 105%

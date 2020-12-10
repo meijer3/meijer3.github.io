@@ -145,6 +145,21 @@
             <li>Alot of GeoWeb sites, workflows and such</li>
           </ul>
         </div>
+        <div class="row text-left q-mt-xl">
+          Handy GeoDev sub-sites
+          <ul class="normallist q-ml-xl q-pl-xl">
+            <a href="#"
+              ><li @click="$router.replace('/reisadvies')">
+                Dutch: De reisadvies kaart. Corona overzicht
+              </li></a
+            >
+            <a href="#"
+              ><li @click="$router.replace('/json')">
+                (ArcGIS) jsons to Python object
+              </li></a
+            >
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -214,7 +229,7 @@
         >
           Contact Us
         </h2>
-        <h3 style="color: whitefont-size:18pxmargin:0 padding:0">
+        <h3 style="color: white; font-size:18px; margin:0 padding:0">
           Please contact us via
           <a
             title="Send us an email"
@@ -413,7 +428,7 @@ section
 
   .container
     max-width: $maxwidth
-    width: 100vw
+    // width: 100vw
     overflow: hidden
     padding: 0 40px
     box-sizing: content-box

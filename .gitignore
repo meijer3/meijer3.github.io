@@ -31,3 +31,5 @@ yarn-error.log*
 *.njsproj
 *.sln
 dist
+_local
+src/pages/reisadvies2.vue

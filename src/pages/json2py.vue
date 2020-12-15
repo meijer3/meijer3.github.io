@@ -58,11 +58,18 @@
 
 <script>
 import { Notify, copyToClipboard } from 'quasar'
+import meta from '../utils/meta.js'
 
 export default {
   name: 'json2py',
+  meta,
   data () {
     return {
+      metaTags: {
+        title: 'GeoDev | Reisadvies MinBuZa met Corona',
+        description:
+          'Deze kaart geeft het reis advies voor landen in Europa en de wereld. Welke landen kunt u op vakantie tijden corona. Kleurcodes zijn groen geel oranje en rood'
+      },
       drawerLeft: false,
       format: false,
       json2Py: true,

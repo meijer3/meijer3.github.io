@@ -132,7 +132,7 @@ export default {
     transition: 0.5s
     .more-info
       padding: 30px 0 30px
-      max-width: 600
+      max-width: 800px
       @media (max-width: $breakpoint-sm-max)
         padding: 30px
     .header-drawer-button

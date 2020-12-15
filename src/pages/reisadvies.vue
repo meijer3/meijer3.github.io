@@ -169,8 +169,10 @@ import L from 'leaflet'
 import * as d3 from 'd3'
 import 'leaflet.geodesic'
 import Loader from '../components/loader'
+import meta from '../utils/meta.js'
 export default {
-  name: 'Reisadvies kaart wereld met corona',
+  name: 'Reisadvies',
+  meta,
   components: {
     LMap,
     LTileLayer,
@@ -193,6 +195,11 @@ export default {
   },
   data () {
     return {
+      metaTags: {
+        title: 'GeoDev | Reisadvies MinBuZa onder Corona',
+        description:
+          'Deze kaart geeft het reis advies voor landen in Europa en de wereld. Welke landen kunt u op vakantie tijden corona. Kleurcodes zijn groen geel oranje en rood'
+      },
       zoom: 3,
       koffie: false,
       loading: true,
@@ -334,22 +341,6 @@ export default {
       var str =
         '<animateMotion xlink:href="#flying-object" dur="3s" begin="0s" fill="freeze" repeatCount="indefinite" rotate="auto"  id="UFOAnimate"><mpath xlink:href="#flight-line"></mpath></animateMotion>'
       svg.insertAdjacentHTML('beforeend', str)
-      console.log(this.flyingObject)
-      // var animateMotion = document.createElementNS(xmlns, 'animateMotion')
-      // animateMotion.setAttribute('xlink:href', '#flying-object')
-      // animateMotion.setAttribute('dur', '3s')
-      // animateMotion.setAttribute('begin', '0s')
-      // animateMotion.setAttribute('fill', 'freeze')
-      // animateMotion.setAttributeNS(null, 'repeatCount', 'indefinite')
-      // animateMotion.setAttribute('rotate', 'auto')
-      // animateMotion.setAttribute('id', 'UFOAnimate')
-
-      // svg.appendChild(animateMotion)
-
-      // var mpath = document.createElementNS(xmlns, 'mpath')
-      // mpath.setAttribute('xlink:href', '#flight-line')
-      // animateMotion.appendChild(mpath)
-      // console.log(mpath)
     },
     translateAlong: function (path, l) {
       return (d, i, a) => {
@@ -361,6 +352,15 @@ export default {
           var p2 = path.getPointAtLength(atLength + 1)
           var angle = (Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180) / Math.PI
           angle = this.direction ? angle : angle - 180
+          console.log(
+            'translate(' +
+              (p1.x - this.flyingObject.attr('width') / 2) +
+              ',' +
+              (p1.y - this.flyingObject.attr('height') / 2) +
+              ')rotate(' +
+              (angle + 135) +
+              ')'
+          )
           return (
             'translate(' +
             (p1.x - this.flyingObject.attr('width') / 2) +

@@ -6,6 +6,12 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 /* eslint-env node */
+const SitemapPlugin = require('sitemap-webpack-plugin').default
+const paths = [
+  { path: '/' },
+  { path: '/maps/reisadvies' },
+  { path: '/maps/json2python' }
+]
 
 module.exports = function (/* ctx */) {
   return {
@@ -39,7 +45,7 @@ module.exports = function (/* ctx */) {
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
 
       // transpile: false,
 
@@ -65,14 +71,24 @@ module.exports = function (/* ctx */) {
           loader: 'eslint-loader',
           exclude: /node_modules/
         })
+        cfg.plugins.push(
+          new SitemapPlugin({
+            base: 'https://geodev.nl',
+            paths,
+            options: {
+              filename: 'sitemap.xml',
+              lastmod: true,
+              changefreq: 'weekly',
+              priority: 0.8
+            }
+          })
+        )
       }
+
     },
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
-      https: false,
-      port: 8001,
-      open: true // opens browser window automatically
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
@@ -97,7 +113,8 @@ module.exports = function (/* ctx */) {
 
       // Quasar plugins
       plugins: [
-        'Notify'
+        'Notify',
+        'Meta'
       ]
     },
 
@@ -115,9 +132,9 @@ module.exports = function (/* ctx */) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: 'geodev',
-        short_name: 'geodev',
-        description: 'geodev website',
+        name: 'GeoDev',
+        short_name: 'GeoDev',
+        description: 'GeoDev website',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',

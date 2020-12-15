@@ -309,11 +309,19 @@
 <script>
 import { openURL } from 'quasar'
 import Mapbox from '../components/mapbox.vue'
+import meta from '../utils/meta.js'
 
 export default {
   name: 'MainPage',
+  meta,
   data () {
     return {
+      metaTags: {
+        title: 'GeoDev | FME & Spatial DevOps',
+        description:
+          'GeoDev is a Geo Spatial Company that specialize in geo- development and FME training. We are FME certified professionals. We work freelance (ZZP) in Netherlands or Sweden. ',
+        image: '/geodev_screenshot.png'
+      },
       email: 'geodev.nl',
       emaildomain: 'gmail.com',
       credits: false,
@@ -386,8 +394,7 @@ export default {
     linkedin (user) {
       openURL('https://nl.linkedin.com/in/' + user)
     }
-  },
-  computed: {}
+  }
 }
 </script>
 

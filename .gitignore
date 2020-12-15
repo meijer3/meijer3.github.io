@@ -33,3 +33,4 @@ yarn-error.log*
 dist
 _local
 src/pages/reisadvies2.vue
+debug.log

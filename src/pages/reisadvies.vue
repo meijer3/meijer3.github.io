@@ -1,189 +1,166 @@
 <template>
-  <q-layout view="hHh Lpr lFf">
-    <q-header elevated class="row wrap justify-start items-start content-start">
-      <q-toolbar>
-        <q-tabs
-          no-caps
-          outside-arrows
-          mobile-arrows
-          style="width: 100vw"
-          class="q-mx-xl"
-        >
-          <q-route-tab id="header-title" name="geodev" to="/"
-            >GeoDev
-          </q-route-tab>
-        </q-tabs>
-      </q-toolbar>
-    </q-header>
-    <q-page-container padding class="flex">
-      <q-page style="flex:1">
-        <q-card v-if="loading" class="z-top absolute-center q-pa-md "
-          ><div class="fit column items-center">
-            <q-spinner-pie color="primary" size="3em" /> Even Laden hoor
-          </div>
-        </q-card>
+  <q-page-container padding class="flex">
+    <q-page style="flex:1">
+      <q-card v-if="loading" class="z-top absolute-center q-pa-md "
+        ><div class="fit column items-center">
+          <Loader />
+          Even Laden hoor
+        </div>
+      </q-card>
 
-        <q-btn
-          @click="koffie = !koffie"
-          round
-          color="primary"
-          class="coffe-icon"
-          icon="local_cafe"
+      <q-btn
+        @click="koffie = !koffie"
+        round
+        color="primary"
+        class="coffe-icon"
+        icon="local_cafe"
+      />
+      <l-map :zoom="zoom" :center="home" ref="myMap">
+        <l-tile-layer
+          url="https://b.tile.opentopomap.org/{z}/{x}/{y}.png"
+          :attribution="attribution"
+        ></l-tile-layer>
+
+        <l-geo-json
+          :geojson="geojson"
+          :options="options"
+          :options-style="styleFunction"
         />
-        <l-map :zoom="zoom" :center="home" ref="myMap">
-          <l-tile-layer
-            url="https://b.tile.opentopomap.org/{z}/{x}/{y}.png"
-            :attribution="attribution"
-          ></l-tile-layer>
-
-          <l-geo-json
-            :geojson="geojson"
-            :options="options"
-            :options-style="styleFunction"
-          />
-          <l-circle-marker
-            :lat-lng="destination"
-            :radius="5"
-            pane="shadowPane"
-          />
-        </l-map>
-        <q-card
-          v-if="this.tooltip !== null"
-          id="tooltip"
-          class="absolute q-py-sm q-ma-md"
-        >
-          <div class="dynamicText q-px-md" @click="() => (this.clicked = true)">
-            <h1>{{ this.tooltipTitle }}</h1>
-            <h2 v-html="tooltip"></h2>
-          </div>
-        </q-card>
-        <q-dialog
-          v-model="clicked"
-          id="info"
-          class="absolute-top q-my-sm q-ma-md z-top"
-        >
-          <q-card>
-            <q-card-section>
-              <div class="text-h4">
-                {{ this.destinationCountry.properties['main.location'] }}
-              </div>
-              {{ this.destinationCountry.properties['modificationdate'] }}
-            </q-card-section>
-            <q-separator />
-            <q-card-section>
-              <q-img
-                :src="this.destinationCountry.properties['png']"
-                spinner-color="white"
-                style="max-height: 60vh;"
-                contain
-                @click="() => (this.imageDialog = true)"
-              />
-              <p
-                id="mibuza"
-                v-html="this.destinationCountry.properties['coronatext']"
-              ></p>
-              <a :href="this.destinationCountry.properties['canonical']"
-                >Lees meer op MinBuZa
-                <q-badge><q-icon name="launch" color="white"/></q-badge>
-              </a>
-            </q-card-section>
-            <q-separator />
-            <q-card-actions align="right">
-              <q-btn
-                flat
-                class="fixed"
-                label="Ik weet Genoeg!"
-                color="primary"
-                v-close-popup
-              />
-            </q-card-actions>
-          </q-card>
-        </q-dialog>
-        <q-dialog
-          v-model="imageDialog"
-          full-width
-          full-height
-          transition-show="scale"
-          transition-hide="scale"
-          @click="() => (this.imageDialog = false)"
-        >
-          <q-card>
+        <l-circle-marker :lat-lng="destination" :radius="5" pane="shadowPane" />
+      </l-map>
+      <q-card
+        v-if="this.tooltip !== null"
+        id="tooltip"
+        class="absolute q-py-sm q-ma-md"
+      >
+        <div class="dynamicText q-px-md" @click="() => (this.clicked = true)">
+          <h1>{{ this.tooltipTitle }}</h1>
+          <h2 v-html="tooltip"></h2>
+        </div>
+      </q-card>
+      <q-dialog
+        v-model="clicked"
+        id="info"
+        class="absolute-top q-my-sm q-ma-md z-top"
+      >
+        <q-card>
+          <q-card-section>
+            <div class="text-h4">
+              {{ this.destinationCountry.properties['main.location'] }}
+            </div>
+            {{ this.destinationCountry.properties['modificationdate'] }}
+          </q-card-section>
+          <q-separator />
+          <q-card-section>
             <q-img
               :src="this.destinationCountry.properties['png']"
               spinner-color="white"
+              style="max-height: 60vh;"
               contain
+              @click="() => (this.imageDialog = true)"
             />
-          </q-card>
-        </q-dialog>
-        <q-dialog
-          v-model="koffie"
-          id="betaalverzoek"
-          persistent
-          class="absolute-top q-py-sm q-ma-md z-top "
-        >
-          <q-card>
-            <q-card-section class="bg-primary text-white">
-              <div class="text-h4 ">
-                Koffie ipv cookies!
-              </div>
-            </q-card-section>
-            <q-separator />
-            <q-card-section class="scroll q-pt-md">
-              Word je al gek van elke site die om cookies vraagt?
+            <p
+              id="mibuza"
+              v-html="this.destinationCountry.properties['coronatext']"
+            ></p>
+            <a
+              :href="this.destinationCountry.properties['canonical']"
+              target="_blank"
+              >Lees meer op MinBuZa
+              <q-badge><q-icon name="launch" color="white"/></q-badge><br />
+              {{ this.destinationCountry.properties['canonical'] }}
+            </a>
+          </q-card-section>
+          <q-separator />
+          <q-card-actions align="right">
+            <q-btn flat label="Ik weet Genoeg!" color="primary" v-close-popup />
+          </q-card-actions>
+        </q-card>
+      </q-dialog>
+      <q-dialog
+        v-model="imageDialog"
+        full-width
+        full-height
+        transition-show="scale"
+        transition-hide="scale"
+        @click="() => (this.imageDialog = false)"
+      >
+        <q-card>
+          <q-img
+            :src="this.destinationCountry.properties['png']"
+            spinner-color="white"
+            contain
+          />
+        </q-card>
+      </q-dialog>
+      <q-dialog
+        v-model="koffie"
+        id="betaalverzoek"
+        persistent
+        class="absolute-top q-py-sm q-ma-md z-top "
+      >
+        <q-card>
+          <q-card-section class="bg-primary text-white">
+            <div class="text-h4 ">
+              Koffie ipv cookies!
+            </div>
+          </q-card-section>
+          <q-separator />
+          <q-card-section class="scroll q-pt-md">
+            Word je al gek van elke site die om cookies vraagt?
 
-              <br />
-              Ik doe het anders,<br />
-              <span class="vertical-middle">en vraag om een koffie</span>
-              <q-img
-                style="margin-top:-10px;margin-left:10px"
-                height="42px"
-                width="42px"
-                src="../assets/img/koffie.png"
-              />
+            <br />
+            Ik doe het anders,<br />
+            <span class="vertical-middle">en vraag om een koffie</span>
+            <q-img
+              style="margin-top:-10px;margin-left:10px"
+              height="42px"
+              width="42px"
+              src="../assets/img/koffie.png"
+            />
 
-              <div
-                class="fit row wrap justify-around   content-start betaalverzoekjes"
-              >
-                <a :href="url_tikkie_25" ref="tikkie_25"
-                  >Koffietje <br />~ 2.5 euro
-                  <q-img
-                    src="https://storage.googleapis.com/geodev.nl/reisadvies/tikkie_open.png"
-                    target="_blank"
-                    title="Fijn betaalverzoek"
-                  />
-                </a>
-                <a :href="url_tikkie_open" ref="tikkie_open"
-                  >Doneer wat je wilt, <br />
-                  meer of minder!
-                  <q-img
-                    src="https://storage.googleapis.com/geodev.nl/reisadvies/tikkie_open.png"
-                    target="_blank"
-                    title="Geweldig betaalverzoek"
-                  />
-                </a>
-              </div>
-              Dit helpt mij om bijvoorbeeld deze site te bouwen en geen
-              advertenties te plaatsen. Je zit nergens aan vast. Het is zelfs
-              geheel
-              <b>anoniem</b>!
+            <div
+              class="fit row wrap justify-around   content-start betaalverzoekjes"
+            >
+              <a :href="url_tikkie_25" ref="tikkie_25"
+                >Koffietje <br />~ 2.5 euro
+                <q-img
+                  src="https://storage.googleapis.com/geodev.nl/reisadvies/tikkie_open.png"
+                  target="_blank"
+                  title="Fijn betaalverzoek"
+                />
+              </a>
+              <a :href="url_tikkie_open" ref="tikkie_open"
+                >Doneer wat je wilt, <br />
+                meer of minder!
+                <q-img
+                  src="https://storage.googleapis.com/geodev.nl/reisadvies/tikkie_open.png"
+                  target="_blank"
+                  title="Geweldig betaalverzoek"
+                />
+              </a>
+            </div>
+            Dit helpt mij om bijvoorbeeld deze site te bouwen en geen
+            advertenties te plaatsen. Je zit nergens aan vast. Het is zelfs
+            geheel
+            <b>anoniem</b>!
 
-              <!-- <q-img src="../assets/img/koffie.jpg" /> -->
-            </q-card-section>
-            <q-card-actions align="right">
-              <q-btn
-                flat
-                label="Nee bedankt"
-                color="primary"
-                v-close-popup
-                no-caps
-                class="bg-primary text-white"
-              />
-            </q-card-actions>
-          </q-card>
-        </q-dialog>
-      </q-page>
-    </q-page-container>
-  </q-layout>
+            <!-- <q-img src="../assets/img/koffie.jpg" /> -->
+          </q-card-section>
+          <q-card-actions align="right">
+            <q-btn
+              flat
+              label="Nee bedankt"
+              color="primary"
+              v-close-popup
+              no-caps
+              class="bg-primary text-white"
+            />
+          </q-card-actions>
+        </q-card>
+      </q-dialog>
+    </q-page>
+  </q-page-container>
 </template>
 <script>
 import { LMap, LTileLayer, LGeoJson, LCircleMarker } from 'vue2-leaflet'
@@ -191,13 +168,28 @@ import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import * as d3 from 'd3'
 import 'leaflet.geodesic'
+import Loader from '../components/loader'
 export default {
-  name: 'Map',
+  name: 'Reisadvies kaart wereld met corona',
   components: {
     LMap,
     LTileLayer,
     LGeoJson,
-    LCircleMarker
+    LCircleMarker,
+    Loader
+  },
+  mounted () {
+    this.$emit('header', {
+      drawer: false,
+      title: 'Reisadvies',
+      subtitle: 'obv MinBuZa',
+      info: `
+      Het overzicht voor reisadvies. Welke landen hebben corona maatregelen en kunnen we nog/alweer op vakantie?<br>
+      Deze data is afkomstig van MinBuZa (Ministerie van Buitenlandse zaken). Wij zetten het alleen maar door<br>
+      Eigenlijk hoort alles natuurlijk groen te zijn: Je mag op vakantie. De werkelijkheid is helaas dat (Q1 2021) veel landen op oranje staan (alleen noodzakelijke reizen).
+      Weinig landen hebben advies 'geel', reizen is toegestaan met alertheid. Helaas zijn er gebieden met name in Afrika en Midden Oosten dat nog rood zijn door geweld.
+      `
+    })
   },
   data () {
     return {
@@ -508,13 +500,10 @@ export default {
         .then(r => r.text())
         .then(url => (this.url_tikkie_25 = url))
     })
-    //
     const response = await fetch(
       'https://storage.googleapis.com/geodev.nl/reisadvies/world.geojson'
     )
-    // const response = await fetch('../assets/world.geojson')
     const data = await response.json()
-
     this.geojson = data
     this.loading = false
   }
@@ -569,7 +558,9 @@ export default {
   top: -5px
   left: 30px
   z-index: 3000
-
+  cursor: pointer
+  &:hover
+    color: #aaa
   .dynamicText
     overflow-y: auto
     max-height: 70vh

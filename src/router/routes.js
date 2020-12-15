@@ -19,16 +19,23 @@ const routes = [
     ]
   },
   {
-    path: '/api',
-    component: () => import('layouts/Api.vue')
-  },
-  {
-    path: '/json',
-    component: () => import('pages/json2py.vue')
-  },
-  {
-    path: '/reisadvies',
-    component: () => import('pages/reisadvies.vue')
+    path: '/maps',
+    name: 'maps',
+    component: () => import('layouts/Maps.vue'),
+    children: [
+      {
+        path: '/maps/Reisadvies',
+        name: '/maps/Reisadvies',
+        alias: '/Reisadvies',
+        component: () => import('pages/reisadvies.vue')
+      },
+      {
+        path: '/maps/json2python',
+        alias: '/maps/python2json',
+        name: 'Json 2 Python',
+        component: () => import('pages/json2py.vue')
+      }
+    ]
   },
   // Always leave this as last one,
   // but you can also remove it

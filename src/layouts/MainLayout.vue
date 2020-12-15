@@ -100,7 +100,7 @@ export default {
   }
 }
 </script>
-<style lang="sass">
+<style lang="sass" scoped>
 body
   font-family: 'Ubuntu'
   font-size: 105%

@@ -498,7 +498,6 @@ section
   top: 520px
 #contact
   background: $primary
-  a
   .e-mail
     color: $secondary
     transition: 0.6s

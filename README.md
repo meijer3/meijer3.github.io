@@ -6,7 +6,7 @@ The builded version (SPA) is the root folder of the `gh-pages` branch.
 
 While the main code (the one we wrote) is in `master` branch.
 
-If you have any questions, take a look at: [The website: geodev.nl ![GeoDev Website](public\geodev_screenshot.png)
+If you have any questions, take a look at: [The website: geodev.nl ![GeoDev Website](public/geodev_screenshot.png)
 ](https://geodev.nl)
 
 Sometimes we add some subpages. Like some nice maps

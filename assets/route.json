@@ -1,0 +1,296 @@
+{
+    "code": "Ok",
+    "routes": [
+        {
+            "legs": [
+                {
+                    "steps": [
+                        {
+                            "weight": 0,
+                            "duration": 0,
+                            "distance": 0,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.30962302950463,
+                                    4.762513354888553,
+                                    0
+                                ],
+                                "type": "depart",
+                                "modifier": "straight"
+                            },
+                            "geometry": "cvg~Huda\\??"
+                        },
+                        {
+                            "weight": 0.3762761,
+                            "duration": 22.576566,
+                            "distance": 28.2207070556706,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.30962302950463,
+                                    4.762513354888553,
+                                    0
+                                ],
+                                "type": "notification",
+                                "modifier": "straight"
+                            },
+                            "geometry": "cvg~Huda\\RXRV"
+                        },
+                        {
+                            "weight": 1.6425080700000005,
+                            "duration": 98.55048420000003,
+                            "distance": 123.1881056290116,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.30942335575734,
+                                    4.76225822539992,
+                                    0
+                                ],
+                                "type": "turn",
+                                "modifier": "left"
+                            },
+                            "geometry": "{tg~Hcca\\HSBI@CBIDMDIFQPa@?[?C?I@S?E?K?I?K@U?G?Q@O?i@"
+                        },
+                        {
+                            "weight": 0.09302998000000026,
+                            "duration": 5.581798800000016,
+                            "distance": 6.977248228578559,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.30909733880217,
+                                    4.7638992909073234,
+                                    0
+                                ],
+                                "type": "turn",
+                                "modifier": "right"
+                            },
+                            "geometry": "{rg~Hkma\\H@B?"
+                        },
+                        {
+                            "weight": 0.36025473000000025,
+                            "duration": 21.615283800000014,
+                            "distance": 27.019104248450134,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.30903472023364,
+                                    4.763893442539095,
+                                    0
+                                ],
+                                "type": "turn",
+                                "modifier": "left"
+                            },
+                            "geometry": "mrg~Hima\\?UEOAd@"
+                        },
+                        {
+                            "weight": 0.0691101200000001,
+                            "duration": 4.146607200000005,
+                            "distance": 5.183258652121581,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.30906606937499,
+                                    4.763887572187062,
+                                    10
+                                ],
+                                "type": "turn",
+                                "modifier": "left"
+                            },
+                            "geometry": "urg~Hima\\B?D@"
+                        },
+                        {
+                            "weight": 0.40289477999999973,
+                            "duration": 24.173686799999984,
+                            "distance": 30.217109045437873,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.309019590687264,
+                                    4.76388278578505,
+                                    10
+                                ],
+                                "type": "turn",
+                                "modifier": "left"
+                            },
+                            "geometry": "krg~Hgma\\?M?A@U?K@g@"
+                        },
+                        {
+                            "weight": 0.6567747999999999,
+                            "duration": 39.406487999999996,
+                            "distance": 49.258109949298884,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.30900422772029,
+                                    4.7643251524268,
+                                    10
+                                ],
+                                "type": "turn",
+                                "modifier": "right"
+                            },
+                            "geometry": "grg~Hapa\\@@B?@?B?H@F?@?B?N@R@N@"
+                        },
+                        {
+                            "weight": 0.5645091400000003,
+                            "duration": 33.87054840000002,
+                            "distance": 42.33818546452822,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.30856239116965,
+                                    4.764279719242032,
+                                    10
+                                ],
+                                "type": "turn",
+                                "modifier": "left"
+                            },
+                            "geometry": "oog~Hwoa\\?S?u@@q@"
+                        },
+                        {
+                            "weight": 1.0530819399999993,
+                            "duration": 63.18491639999996,
+                            "distance": 78.98114535697442,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.30854513786847,
+                                    4.764899127774247,
+                                    10
+                                ],
+                                "type": "turn",
+                                "modifier": "right"
+                            },
+                            "geometry": "mog~Hssa\\rAHP@f@B"
+                        },
+                        {
+                            "weight": 1.5690049299999989,
+                            "duration": 94.14029579999993,
+                            "distance": 117.67536919682411,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.307836955410004,
+                                    4.764819871058492,
+                                    10
+                                ],
+                                "type": "turn",
+                                "modifier": "sharp left"
+                            },
+                            "geometry": "_kg~Hcsa\\@u@e@YaAYOc@??OYIAGA"
+                        },
+                        {
+                            "weight": 2.9575645700000033,
+                            "duration": 177.4538742000002,
+                            "distance": 221.81734216927376,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.30860278581291,
+                                    4.765679858654748,
+                                    10
+                                ],
+                                "type": "turn",
+                                "modifier": "right"
+                            },
+                            "geometry": "wog~Hoxa\\EQAAAE?C@U?C???A?A?A?I?M@q@BcBBcB?Y?MBcBBeB?G?G?K??@I?M?A?E?C?A?A"
+                        },
+                        {
+                            "weight": 1.6645771899999982,
+                            "duration": 99.87463139999988,
+                            "distance": 124.8432893624554,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.30853948109387,
+                                    4.768908901797525,
+                                    10
+                                ],
+                                "type": "turn",
+                                "modifier": "right"
+                            },
+                            "geometry": "kog~Hulb\\B?n@o@j@m@RSZ[JKTWJK"
+                        },
+                        {
+                            "weight": 1.6147280300000015,
+                            "duration": 96.88368180000009,
+                            "distance": 121.10460223581828,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.30758588551038,
+                                    4.769860233793677,
+                                    10
+                                ],
+                                "type": "turn",
+                                "modifier": "left"
+                            },
+                            "geometry": "mig~Hsrb\\FsADeCBgC"
+                        },
+                        {
+                            "weight": 0.6548404099999989,
+                            "duration": 39.29042459999994,
+                            "distance": 49.227085540074306,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.30749805413399,
+                                    4.771628658492994,
+                                    10
+                                ],
+                                "type": "turn",
+                                "modifier": "sharp right"
+                            },
+                            "geometry": "{hg~Hu}b\\B?AhAAd@FT"
+                        },
+                        {
+                            "weight": 0,
+                            "duration": 0,
+                            "distance": 0,
+                            "name": "",
+                            "maneuver": {
+                                "location": [
+                                    52.30745538548027,
+                                    4.770957096111511,
+                                    10
+                                ],
+                                "type": "arrive",
+                                "modifier": "straight"
+                            },
+                            "geometry": "shg~Hoyb\\??"
+                        }
+                    ],
+                    "distance": 1026.0506621345178,
+                    "duration": 820.7492874000001,
+                    "summary": "",
+                    "weight": 0
+                }
+            ],
+            "weight": 820.7492874000001,
+            "weight_name": "routability",
+            "distance": 1026.0506621345178,
+            "duration": 820.7492874000001
+        }
+    ],
+    "waypoints": [
+        {
+            "location": [
+                52.30962302950463,
+                4.762513354888553,
+                0
+            ],
+            "name": ""
+        },
+        {
+            "name": "",
+            "location": [
+                52.30745538548027,
+                4.770957096111511,
+                10
+            ]
+        }
+    ],
+    "poi_on_route": []
+}

@@ -13,6 +13,7 @@ const routes = [
           { path: 'datalab', component: () => import('pages/datalab.vue') },
           { path: 'fme', component: () => import('pages/fme.vue') },
           { path: 'glacier', component: () => import('pages/glacier.vue') },
+          { path: 'smallProjects', component: () => import('pages/smallProjects.vue') },
           { path: 'wayfinding', component: () => import('pages/Wayfinding.vue') }
         ]
       }
@@ -28,6 +29,12 @@ const routes = [
         name: '/maps/Reisadvies',
         alias: '/Reisadvies',
         component: () => import('pages/reisadvies.vue')
+      },
+      {
+        path: '/maps/sweden',
+        name: '/maps/sweden',
+        alias: '/sweden',
+        component: () => import('pages/sweden-netherlands.vue')
       },
       {
         path: '/maps/json2python',

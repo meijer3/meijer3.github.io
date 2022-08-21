@@ -314,6 +314,7 @@ import meta from '../utils/meta.js'
 export default {
   name: 'MainPage',
   meta,
+  
   data () {
     return {
       metaTags: {
@@ -329,8 +330,9 @@ export default {
       margin_bottom: 60,
       portfolioitem: null,
       skills: {
-        Scripting: 'Python, Javascript, Typescript',
-        Frameworks: 'React js, Vue js, Quasar js',
+        Scripting: 'Python, Javascript, Typescript, C#.net',
+        FrontEnd: 'Angular js, Vue js, React js',
+        Frameworks: 'RXJS, Quasar js',
         Wayofworking: 'DevOps, Scrum, Agile',
         Container: 'Docker, Kubernetes',
         FME: 'FME desktop, FME server, FME Cloud, Custom Transformers, python',
@@ -340,11 +342,11 @@ export default {
           'Arpcy, ArcGIS API for JavaScript, Jupyter Notebooks, ArcGIS API for Python',
         WebGIS: 'Geoserver, Openlayers, Mapbox (here on this site!), Leaflet',
         Opensource:
-          'PostGIS, PGrouting, OSRM, OSM, QGis, GeoPackages, OGC (wms &comma wfs), Mapbox Vectortiles',
+          'PostGIS, PGrouting, OSRM, OSM, QGis, GeoPackages, OGC (like wms, wfs), Mapbox Vectortiles',
         Databases: 'Redis, Postgres, Oracle, SQL, mySQL',
         Website: 'HTML, JS, CSS, SASS, SCSS',
         APIs: 'Swagger, Rest',
-        DevTools: 'Git, Node, vs code, pycharm, fork',
+        DevTools: 'Git, Node, VisualStudio, VS code, Pycharm, Fork',
         Platforms: 'Linux, Windows, Openshift'
       },
       portfolio: [

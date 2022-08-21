@@ -53,52 +53,52 @@
 </template>
 
 <script>
-import { scroll } from 'quasar'
-const { getScrollTarget, setScrollPosition } = scroll
+import { scroll } from "quasar";
+const { getScrollTarget, setScrollPosition } = scroll;
 
 export default {
-  name: 'MainLayout',
+  name: "MainLayout",
   components: {},
-  data () {
+  data() {
     return {
       hitTop: true,
-      tab: 'geodev',
+      tab: "geodev",
       leftDrawerOpen: false
-    }
+    };
   },
   methods: {
-    scrollToElement (selector) {
-      const duration = 1000
+    scrollToElement(selector) {
+      const duration = 1000;
 
-      const el = document.querySelectorAll(selector)[0]
-      const target = getScrollTarget(el)
-      const offset = el.offsetTop + window.innerHeight / 2 - 60 // -60 for padding title
+      const el = document.querySelectorAll(selector)[0];
+      const target = getScrollTarget(el);
+      const offset = el.offsetTop - 120; // -60 for padding title
 
-      setScrollPosition(target, offset, duration)
+      setScrollPosition(target, offset, duration);
     },
 
-    checkScroll (e) {
-      this.hitTop = e.position < 150
+    checkScroll(e) {
+      this.hitTop = e.position < 150;
       Array.prototype.slice
-        .call(document.querySelectorAll('section'))
+        .call(document.querySelectorAll("section"))
         .filter(s =>
-          ['geodev', 'services', 'portfolio', 'about', 'contact'].includes(s.id)
+          ["geodev", "services", "portfolio", "about", "contact"].includes(s.id)
         )
         .filter(s => {
-          var el = s.getBoundingClientRect()
+          var el = s.getBoundingClientRect();
           return (
             (el.top < 0 && el.top + el.height > 150) ||
             (el.top > 0 && el.top < 100) ||
-            (el.top < 600 && s.id === 'contact') || // Contact is visible
-            (e.position < 100 && s.id === 'geodev')
-          ) // If the upperone is near
+            (el.top < 600 && s.id === "contact") || // Contact is visible
+            (e.position < 100 && s.id === "geodev")
+          ); // If the upperone is near
         })
         .map(s => {
-          this.tab = s.id
-        })
+          this.tab = s.id;
+        });
     }
   }
-}
+};
 </script>
 <style lang="sass" scoped>
 body

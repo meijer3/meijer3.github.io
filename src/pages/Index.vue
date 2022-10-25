@@ -23,16 +23,16 @@
             <q-img src="../assets/avatars/avatatars-04.png" />
             <h4>GIS developer</h4>
             <p>
-              We develop in Javascript/Typescript/Python. We know open-source
-              webviewers/Esri products
+              We develop open-source web-GIS like Angular/OpenLayers. We also
+              work full-stack and know a lot about ESRI.
             </p>
           </div>
           <div class="col-4">
             <q-img src="../assets/avatars/avatatars-01.png" />
             <h4>FME trainer & specialist</h4>
             <p>
-              We can give offical FME trainings. We are certified trainer. We
-              can also review. Our trainer has offical Safe FME
+              We gave a lot FME trainings. We are certified trainer. We can also
+              review. Our trainer has official Safe FME
               <a
                 target="_blank"
                 href="https://www.sweco.nl/nieuws/nieuwsartikelen/special-recognition-award-voor-fme-professional-sander-meijer/"
@@ -49,8 +49,9 @@
             />
             <h4>Analyst</h4>
             <p>
-              We prepare data, make it visible, so conclusions can be made by
-              experts
+              We believe in strong visual layouts. UX and UI are almost as
+              important as the data itself. We prepare data and make it visible,
+              so conclusions can be made by experts.
             </p>
           </div>
         </div>
@@ -94,7 +95,7 @@
             v-for="item in portfolio"
             :key="item.title"
             @click="$router.push('/' + item.url)"
-            class="q-mb-xl"
+            class="q-mb-xl portfolio-card"
           >
             <q-img :src="item.img" style="max-width:100%" />
             <div class="q-page-footer">
@@ -106,9 +107,107 @@
           </q-card>
         </div>
 
-        <div class="row text-left q-mt-xl">
+        <div
+          class="fit row text-left q-mt-xl small-project"
+          style="margin-top:300px"
+        >
           Other projects
-          <ul class="normallist q-ml-xl q-pl-xl">
+          <ul class="normallist ">
+            <li>
+              <q-card
+                @click="openPassiveOpen()"
+                class="row wrap justify-start items-center no-margin full-height"
+              >
+                <q-img
+                  src="thumbs\thumb-08.png"
+                  style="height: auto; max-width: 170px"
+                  fit="contain"
+                ></q-img>
+
+                <div class="q-mx-lg q-my-sm col">
+                  <b>Passive Open</b> (external page)<br />An open source and
+                  passive house design. Website, design (and future build) are
+                  done by us. It uses D3, openlayers and THREE.js. It is still
+                  under construction
+                </div>
+              </q-card>
+            </li>
+
+            <li>
+              <q-card
+                @click="$router.push('/c2000')"
+                class="row wrap justify-start items-center no-margin full-height"
+              >
+                <q-img
+                  src="thumbs\thumb-03.png"
+                  style="height: auto; max-width: 170px"
+                  fit="contain"
+                ></q-img>
+
+                <div class="q-mx-lg q-my-sm col">
+                  <b>C2000</b><br />
+                  How rough is Holland? This is a roughness map, used by the
+                  Dutch police to calibrate their own radio towers for their
+                  C2000 system
+                </div>
+              </q-card>
+            </li>
+
+            <li>
+              <q-card
+                @click="$router.push('/boring')"
+                class="row wrap justify-start items-center no-margin full-height"
+              >
+                <q-img
+                  src="thumbs\thumb-04.png"
+                  style="height: auto; max-width: 170px"
+                  fit="contain"
+                ></q-img>
+
+                <div class="q-mx-lg q-my-sm col">
+                  <b>Boreholes</b><br />
+                  Digitalization of 1980's boreholes. PDFs to digital format
+                  with FME
+                </div>
+              </q-card>
+            </li>
+
+            <li>
+              <q-card
+                @click="$router.push('/fme')"
+                class="row wrap justify-start items-center no-margin full-height"
+              >
+                <q-img
+                  src="thumbs\thumb-05.png"
+                  style="height: auto; max-width: 170px"
+                  fit="contain"
+                ></q-img>
+
+                <div class="q-mx-lg q-my-sm col">
+                  Feature Manipulation Engine. Expert and trainer
+                </div>
+              </q-card>
+            </li>
+
+            <li>
+              <q-card
+                @click="$router.push('/datalab')"
+                class="row wrap justify-start items-center no-margin full-height"
+              >
+                <q-img
+                  src="thumbs\thumb-06.png"
+                  style="height: auto; max-width: 170px"
+                  fit="contain"
+                ></q-img>
+
+                <div class="q-mx-lg q-my-sm col">
+                  One FME script to download all possible data: Datalab. Select
+                  an extend and download from all available municipalities,
+                  states, companies and waterboards
+                </div>
+              </q-card>
+            </li>
+
             <li>
               Interactive <b>D3JS dashboard</b> for 'tankcooker' project (D3JS
               and FME)
@@ -122,6 +221,11 @@
               (Apple's/Standard indoor map format) with FME. So Schiphol indoor
               in Apple's maps on your Iphone
             </li>
+          </ul>
+        </div>
+        <div class="row text-left q-mt-xl">
+          Other smaller projects
+          <ul class="normallist q-ml-xl q-pl-xl">
             <li>
               <a
                 href="https://www.sweco.nl/nieuws/nieuwsartikelen/special-recognition-award-voor-fme-professional-sander-meijer/"
@@ -149,13 +253,16 @@
           Handy GeoDev sub-sites
           <ul class="normallist q-ml-xl q-pl-xl">
             <a href="#"
-              ><li @click="$router.replace('/reisadvies')">
-                Dutch: De reisadvies kaart. Corona overzicht
+              ><li @click="$router.replace('/maps/json2python')">
+                ArcGIS - jsons to Python object
               </li></a
             >
             <a href="#"
-              ><li @click="$router.replace('/json')">
-                (ArcGIS) jsons to Python object
+              ><li @click="$router.replace('/reisadvies')">
+                <del>
+                  ( Dutch & Not active anymore) De reisadvies kaart, corona
+                  overzicht
+                </del>
               </li></a
             >
           </ul>
@@ -183,7 +290,10 @@
             />
           </q-avatar>
           <h4>Sander Meijer</h4>
-          <p class="text-muted">Freelance Developer / Trainer / Analyst</p>
+          <p class="text-muted">
+            Freelance Developer / Trainer / Analyst<br />
+            Speaks Dutch / Swedish / English
+          </p>
           <q-btn
             class="q-mb-xs"
             round
@@ -307,97 +417,106 @@
 </template>
 
 <script>
-import { openURL } from 'quasar'
-import Mapbox from '../components/mapbox.vue'
-import meta from '../utils/meta.js'
+import { openURL } from "quasar";
+import Mapbox from "../components/mapbox.vue";
+import meta from "../utils/meta.js";
 
 export default {
-  name: 'MainPage',
+  name: "MainPage",
   meta,
-  
-  data () {
+
+  data() {
     return {
       metaTags: {
-        title: 'GeoDev | FME & Spatial DevOps',
+        title: "GeoDev | FME & Spatial DevOps",
         description:
-          'GeoDev is a Geo Spatial Company that specialize in geo- development and FME training. We are FME certified professionals. We work freelance (ZZP) in Netherlands or Sweden. ',
-        image: '/geodev_screenshot.png'
+          "GeoDev is a Geo Spatial Company that specialize in geo- development and FME training. We are FME certified professionals. We work freelance (ZZP) in Netherlands or Sweden. ",
+        image: "/geodev_screenshot.png"
       },
-      email: 'geodev.nl',
-      emaildomain: 'gmail.com',
+      email: "geodev.nl",
+      emaildomain: "gmail.com",
       credits: false,
       top_offset: 99,
       margin_bottom: 60,
       portfolioitem: null,
       skills: {
-        Scripting: 'Python, Javascript, Typescript, C#.net',
-        FrontEnd: 'Angular js, Vue js, React js',
-        Frameworks: 'RXJS, Quasar js',
-        Wayofworking: 'DevOps, Scrum, Agile',
-        Container: 'Docker, Kubernetes',
-        FME: 'FME desktop, FME server, FME Cloud, Custom Transformers, python',
+        Scripting: "Python, Javascript, Typescript, C#.net",
+        FrontEnd: "Angular js, Vue js, React js",
+        Frameworks: "RXJS, Quasar js, D3, THREE.JS",
+        Wayofworking: "DevOps, Scrum, Agile",
+        Container: "Docker, Kubernetes",
+        FME: "FME desktop, FME server, FME Cloud, Custom Transformers, python",
         ESRI:
-          'ArcGIS Pro, ArcMap, Enterprise, GeoEvent, AGOL, ArcGIS server, Collector apps, GeoWeb',
-        'ESRI Script':
-          'Arpcy, ArcGIS API for JavaScript, Jupyter Notebooks, ArcGIS API for Python',
-        WebGIS: 'Geoserver, Openlayers, Mapbox (here on this site!), Leaflet',
+          "ArcGIS Pro, ArcMap, Enterprise, GeoEvent, AGOL, ArcGIS server, Collector apps, GeoWeb",
+        "ESRI Script":
+          "Arpcy, ArcGIS API for JavaScript, Jupyter Notebooks, ArcGIS API for Python",
+        WebGIS: "Geoserver, Openlayers, Mapbox (here on this site!), Leaflet",
         Opensource:
-          'PostGIS, PGrouting, OSRM, OSM, QGis, GeoPackages, OGC (like wms, wfs), Mapbox Vectortiles',
-        Databases: 'Redis, Postgres, Oracle, SQL, mySQL',
-        Website: 'HTML, JS, CSS, SASS, SCSS',
-        APIs: 'Swagger, Rest',
-        DevTools: 'Git, Node, VisualStudio, VS code, Pycharm, Fork',
-        Platforms: 'Linux, Windows, Openshift'
+          "PostGIS, PGrouting, OSRM, OSM, QGis, GeoPackages, OGC (like wms, wfs), Mapbox Vectortiles",
+        Databases: "Redis, Postgres, Oracle, SQL, mySQL",
+        Website: "HTML, JS, CSS, SASS, SCSS",
+        APIs: "Swagger, Rest",
+        DevTools: "Git, Node, VisualStudio, VS code, Pycharm, Fork",
+        Platforms: "Linux, Windows, Openshift"
       },
       portfolio: [
         {
-          title: 'Does the glacier retreat?',
-          img: 'thumbs/thumb-01.svg',
-          subtitle: 'Drones in Himalaya',
-          url: 'glacier'
+          title: "Common Operational Picture (COP)",
+          img: "thumbs/thumb-07.png",
+          subtitle: "Dutch Army / Military police",
+          url: "COP"
         },
         {
-          title: 'Go to your gate',
-          img: 'thumbs/thumb-02.svg',
-          subtitle: 'Wayfinding on Schihol API',
-          url: 'wayfinding'
+          title: "Does the glacier retreat?",
+          img: "thumbs/thumb-01.png",
+          subtitle: "Drones in Himalaya",
+          url: "glacier"
         },
         {
-          title: 'How rough is Holland?',
-          img: 'thumbs/thumb-03.svg',
-          subtitle: 'Input map to tweak radio coms',
-          url: 'c2000'
-        },
-        {
-          title: 'No humans involved',
-          img: 'thumbs/thumb-04.svg',
-          subtitle: "Digitalization of 1980's boreholes",
-          url: 'boring'
-        },
-        {
-          subtitle: 'Feature Manipulation Engine',
-          img: 'thumbs/thumb-05.svg',
-          title: 'Official Trainer for FME courses',
-          url: 'fme'
-        },
-        {
-          title: 'Download GIS the easy way',
-          img: 'thumbs/thumb-06.svg',
-          subtitle: 'ArcGIS, PDOK, Waterschapsdata',
-          url: 'datalab'
+          title: "Go to your gate",
+          img: "thumbs/thumb-02.png",
+          subtitle: "Wayfinding on Schihol API",
+          url: "wayfinding"
         }
+        // {
+        //   title: "How rough is Holland?",
+        //   img: "thumbs/thumb-03.png",
+        //   subtitle: "Input map to tweak radio coms",
+        //   url: "c2000"
+        // },
+        // {
+        //   title: "No humans involved",
+        //   img: "thumbs/thumb-04.png",
+        //   subtitle: "Digitalization of 1980's boreholes",
+        //   url: "boring"
+        // },
+        // {
+        //   subtitle: "Feature Manipulation Engine",
+        //   img: "thumbs/thumb-05.png",
+        //   title: "Official Trainer for FME courses",
+        //   url: "fme"
+        // }
+        // {
+        //   title: "Download GIS the easy way",
+        //   img: "thumbs/thumb-06.svg",
+        //   subtitle: "ArcGIS, PDOK, Waterschapsdata",
+        //   url: "datalab"
+        // }
       ]
-    }
+    };
   },
   components: {
     Mapbox
   },
   methods: {
-    linkedin (user) {
-      openURL('https://nl.linkedin.com/in/' + user)
+    linkedin(user) {
+      openURL("https://nl.linkedin.com/in/" + user);
+    },
+    openPassiveOpen() {
+      openURL("https://passiveopen.com/");
     }
   }
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -494,6 +613,13 @@ section
           &:hover
             color: $primary
             font-weight: 700
+.small-project
+  li
+    max-width: 600px
+  .q-card
+    max-width: 600px
+    cursor: pointer
+    overflow: hidden
 
 #portfoliocard
   position: absolute
@@ -549,7 +675,7 @@ section
   margin-bottom: 10px
   min-height: 90px
 
-.q-card
+.q-card.portfolio-card
   min-width: $maxwidth/4
   transition: 1s
   overflow: hidden

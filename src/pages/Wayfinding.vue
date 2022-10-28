@@ -7,7 +7,7 @@
         </q-card-section>
 
         <q-card-section  style="max-height: calc(100% - 72px);" class="scroll"  >
-            Schiphol 'Wayfinding'-API exists of several parts. Every part is a project by it self.
+            Schiphol 'Wayfinding'-API that consists of several parts. Every part is a project by itself.
             <ul class="text-center" style="margin:20px auto 0 ; width: 380px;  list-style: decimal;">
                 <li class="text-left" >A public Basemap IMDF (Indoor Map)</li>
                 <li class="text-left" >Wayfinding API</li>
@@ -17,9 +17,9 @@
             </ul>
 
             <h2>1 IMDF</h2>
-            <h3> <a href="https://register.apple.com/resources/imdf/">Indoor Mapping Data Format</a> is becoming  the new OGC standard for indoor GIS <br>(At time of writing it still a <a href="https://www.ogc.org/standards/requests/202"> OGC request</a>) </h3>
+            <h3> <a href="https://register.apple.com/resources/imdf/">Indoor Mapping Data Format</a> is becoming  the new OGC standard for indoor GIS <br>(At time of writing it's still an <a href="https://www.ogc.org/standards/requests/202"> OGC request</a>) </h3>
 
-            Apple designed a standard format GIS for indoor buildings like airports called: <a href="https://register.apple.com/resources/imdf/"> IMDF</a>. We worked closely with Apple Maps and <a href="https://www.safe.com/integrate/indoor-mapping-data-format-imdf/">Safe Software</a> (FME) to build the Schiphol IMDF. The conversion from Schiphol data into IMDF is quite complex and ended up in a workspace that exists  of more than 500+ transformers! During the project this decreased due to changes in the workflow. We changed how Schiphol maintained their data and followed the 'Airport API'-model that is based on IMDF. Therefore were less mappings (such as categories) needed in the end.
+            Apple designed a standard  indoor GIS format  for buildings like airports called: <a href="https://register.apple.com/resources/imdf/"> IMDF</a>. We worked closely with Apple Maps and <a href="https://www.safe.com/integrate/indoor-mapping-data-format-imdf/">Safe Software</a> (FME) to build the Schiphol IMDF. The conversion from Schiphol data into IMDF is quite complex and resulting in a workspace that exists  of more than 500+ transformers! During the project this decreased due to changes in the workflow. We changed how Schiphol maintained their data and followed the 'Airport API'-model that is based on IMDF. Therefore  less mappings were needed in the end (such as categories) .
             <q-img alt="Apples IMDF on a iphones" style="max-height:50vh"   src="../assets/img/imdf_apple.jpg" />
             <div class="light"> IMDF seen on an iphone at Apple maps</div>
 

@@ -10,36 +10,39 @@
     <section
       class="headerimg"
       title="ArcGIS pro render of the GIS Lights of Schiphol"
-    />
+    ></section>
     <!-- Services -->
     <section id="services" class="q-py-xl">
       <div class="container">
         <h2 class="section-heading">Services</h2>
-        <h3 class="section-subheading light">What we do as GeoDev</h3>
+        <!-- <h3 class="section-subheading light">What we do as GeoDev</h3> -->
         <div
           class="fit row wrap justify-center items-start content-start text-center"
         >
           <div class="col-4">
             <q-img src="../assets/avatars/avatatars-04.png" />
-            <h4>GIS developer</h4>
+            <h4>Geo Developer</h4>
             <p>
-              We develop open-source web-GIS like Angular/OpenLayers. We also
-              work full-stack and know a lot about ESRI.
+              Years of experience within GIS development with a main focus in
+              open-source web-GIS like Angular/OpenLayers. History of full-stack
+              development and trained in ESRI products.
             </p>
           </div>
           <div class="col-4">
             <q-img src="../assets/avatars/avatatars-01.png" />
             <h4>FME trainer & specialist</h4>
             <p>
-              We gave a lot FME trainings. We are certified trainer. We can also
-              review. Our trainer has official Safe FME
+              Deep FME understanding that comes together with knowledge about
+              data-processing and data-quality.<br />
+              Award:
+              <!-- Our FME-trainer won an official Safe  -->
               <a
                 target="_blank"
                 href="https://www.sweco.nl/nieuws/nieuwsartikelen/special-recognition-award-voor-fme-professional-sander-meijer/"
               >
-                special recognition</a
+                FME special recognition</a
               >
-              award.
+              <!-- award. -->
             </p>
           </div>
           <div class="col-4">
@@ -49,33 +52,39 @@
             />
             <h4>Analyst</h4>
             <p>
-              We believe in strong visual layouts. UX and UI are almost as
-              important as the data itself. We prepare data and make it visible,
-              so conclusions can be made by experts.
+              Data preparation, visualization and a good UX give more insights
+              and enhances the user experience so conclusions can be made by
+              experts.
             </p>
           </div>
         </div>
 
-        <div class="row q-mb-xl" style="margin-top:60px">
+        <div class="row q-mb-xl" style="margin-top: 60px">
           <div class="col-sm-3 fme-icon"></div>
           <div
             class="col-sm-2 fme-icon"
-            style="background-image:url('https://images.safe.com/logos/fme/fme-certified-professional.png')"
+            style="
+              background-image: url('https://images.safe.com/logos/fme/fme-certified-professional.png');
+            "
           ></div>
           <div
             class="col-sm-2 fme-icon"
-            style="background-image:url('https://images.safe.com/logos/fme/fme-certified-trainer.png')"
+            style="
+              background-image: url('https://images.safe.com/logos/fme/fme-certified-trainer.png');
+            "
           ></div>
           <div
             class="col-sm-2 fme-icon"
-            style="background-image:url('https://images.safe.com/logos/fme/fme-certified-server.png')"
+            style="
+              background-image: url('https://images.safe.com/logos/fme/fme-certified-server.png');
+            "
           ></div>
         </div>
       </div>
     </section>
 
     <!-- Map Example-->
-    <section style="background:#333">
+    <section style="background: #333">
       <Mapbox />
     </section>
 
@@ -88,8 +97,8 @@
         </h3>
 
         <div
-          class="fit row wrap  justify-around items-start content-start"
-          style="position:relative"
+          class="fit row wrap justify-around items-start content-start"
+          style="position: relative"
         >
           <q-card
             v-for="item in portfolio"
@@ -97,7 +106,7 @@
             @click="$router.push('/' + item.url)"
             class="q-mb-xl portfolio-card"
           >
-            <q-img :src="item.img" style="max-width:100%" />
+            <q-img :src="item.img" style="max-width: 100%" />
             <div class="q-page-footer">
               <div class="text-h6 q-py-md">{{ item.title }}</div>
               <div class="text-subtitle2 q-pb-md light">
@@ -109,10 +118,10 @@
 
         <div
           class="fit row text-left q-mt-xl small-project"
-          style="margin-top:300px"
+          style="margin-top: 300px"
         >
           Other projects
-          <ul class="normallist ">
+          <ul class="normallist">
             <li>
               <q-card
                 @click="openPassiveOpen()"
@@ -125,10 +134,9 @@
                 ></q-img>
 
                 <div class="q-mx-lg q-my-sm col">
-                  <b>Passive Open</b> (external page)<br />An open source and
-                  passive house design. Website, design (and future build) are
-                  done by us. It uses D3, openlayers and THREE.js. It is still
-                  under construction
+                  <b>Passive Open</b> (external page - still under
+                  construction)<br />Open source and passive house design. Uses
+                  D3, openlayers and THREE.js.
                 </div>
               </q-card>
             </li>
@@ -146,9 +154,8 @@
 
                 <div class="q-mx-lg q-my-sm col">
                   <b>C2000</b><br />
-                  How rough is Holland? This is a roughness map, used by the
-                  Dutch police to calibrate their own radio towers for their
-                  C2000 system
+                  Roughness map, used by the Dutch police to calibrate their
+                  radio towers for their C2000 system.
                 </div>
               </q-card>
             </li>
@@ -167,7 +174,7 @@
                 <div class="q-mx-lg q-my-sm col">
                   <b>Boreholes</b><br />
                   Digitalization of 1980's boreholes. PDFs to digital format
-                  with FME
+                  with FME.
                 </div>
               </q-card>
             </li>
@@ -184,7 +191,8 @@
                 ></q-img>
 
                 <div class="q-mx-lg q-my-sm col">
-                  Feature Manipulation Engine. Expert and trainer
+                  <b>FME</b><br />
+                  Feature Manipulation Engine. Expert and trainer.
                 </div>
               </q-card>
             </li>
@@ -201,15 +209,16 @@
                 ></q-img>
 
                 <div class="q-mx-lg q-my-sm col">
-                  One FME script to download all possible data: Datalab. Select
-                  an extend and download from all available municipalities,
-                  states, companies and waterboards
+                  <b>Datalab</b><br />
+                  One FME script to download all possible data. Select an extent
+                  and download from all available municipalities, states,
+                  companies and waterboards.
                 </div>
               </q-card>
             </li>
 
             <li>
-              Interactive <b>D3JS dashboard</b> for 'tankcooker' project (D3JS
+              Interactive <b>D3.JS dashboard</b> for 'tankcooker' project (D3JS
               and FME)
             </li>
             <li><b>Audith of FME</b> usage at Prorail and Rijkswaterstaat</li>
@@ -218,8 +227,8 @@
                 >Schiphol
                 <a href="https://register.apple.com/resources/imdf/">IMDF</a></b
               >
-              (Apple's/Standard indoor map format) with FME. So Schiphol indoor
-              in Apple's maps on your Iphone
+              (indoor map data format) with FME. Schiphol indoor map on Iphones
+              in Apple's maps.
             </li>
           </ul>
         </div>
@@ -240,13 +249,13 @@
                 >'Staat van je Straat'</a
               >
             </li>
-            <li>Make a sync databse for Ruimtelijke Plannen (RO)</li>
+            <li>Sync database for Ruimtelijke Plannen (RO)</li>
             <li>Smart mobility project</li>
-            <li>Digitalisation of Dutch 'KLIC meldingen' (.png files)</li>
+            <li>Digitalization of Dutch 'KLIC meldingen' (.png files)</li>
             <li>Business2Business with Kadaster</li>
             <li>Small self-serve fme services</li>
             <li>FME validations, fme workspace / other documents</li>
-            <li>Alot of GeoWeb sites, workflows and such</li>
+            <li>GeoWeb/Geocortex sites and workflows</li>
           </ul>
         </div>
         <div class="row text-left q-mt-xl">
@@ -274,13 +283,14 @@
     <section class="q-py-xl" id="about">
       <div class="container">
         <h2 class="section-heading col-12">Who is GeoDev</h2>
-        <h3 class="section-subheading text-muted  col-12">
+        <h3 class="section-subheading text-muted col-12">
           GeoDev is (for now) a freelance developer.
         </h3>
 
         <div
           class="team-member col-4"
           onclick="window.open('https://nl.linkedin.com/in/swmeijer', '_blank')"
+                title="Go to linkedin"
         >
           <q-avatar style="border: 7px solid rgba(0, 0, 0, 0.1)">
             <img
@@ -293,6 +303,24 @@
           <p class="text-muted">
             Freelance Developer / Trainer / Analyst<br />
             Speaks Dutch / Swedish / English
+            <div class="fit q-gutter-sm">
+
+              <img
+                class="language-circle"
+                src="icons/Dutch_flag_icon_round.svg.png"
+                title="Nederlands"
+                />
+                <img
+                class="language-circle"
+                title="Svenska"
+                src="icons/Sweden_flag_icon_round.svg.png"
+                />
+                <img
+                title="English"
+                class="language-circle"
+                src="icons/United-kingdom_flag_icon_round.svg.png"
+              />
+            </div>
           </p>
           <q-btn
             class="q-mb-xs"
@@ -311,7 +339,7 @@
         <div class="section-heading col-12 text-h7 text-center">
           What do we use
         </div>
-        <div class="section-subheading light ">
+        <div class="section-subheading light">
           We love to learning new things and technologies
         </div>
         <div class="row text-left q-mt-xl">
@@ -335,7 +363,7 @@
       <div class="container fit row wrap justify-center">
         <h2
           class="section-heading text-uppercase col-12 text-center"
-          style="color:white"
+          style="color: white"
         >
           Contact Us
         </h2>
@@ -356,7 +384,7 @@
     </section>
 
     <!-- Footer -->
-    <section class="q-py-xl" style="background:white">
+    <section class="q-py-xl" style="background: white">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-4 text-right">
@@ -374,12 +402,12 @@
               @click="linkedin('swmeijer')"
             />
           </div>
-          <div class="col-4  text-left credits">
+          <div class="col-4 text-left credits">
             <span @click="credits = true">Credits & <br />Disclaimer</span>
             <q-dialog v-model="credits">
               <q-card
                 ><q-card-section
-                  ><div class="text-h6 ">
+                  ><div class="text-h6">
                     Credits & Disclaimer
                   </div></q-card-section
                 >
@@ -389,8 +417,14 @@
                   of the products (such as Schiphol Wayfinding) are only
                   intented to show what we are capable of. There are no
                   commerical models behind them. <br /><br />We are gladly
-                  making use of open-soucre and open-data! Logos are adjusted to
-                  fit the color
+                  making use of open-soucre and open-data! Company logos are
+                  adjusted to fit the color.<br />
+
+                  <a
+                    href="https://www.flaticon.com/free-icons/sweden"
+                    title="sweden icons"
+                    >Language icons created by Flaticon</a
+                  >
                 </q-card-section>
                 <q-card-actions align="right"
                   ><q-btn flat label="OK" color="primary" v-close-popup
@@ -431,7 +465,7 @@ export default {
         title: "GeoDev | FME & Spatial DevOps",
         description:
           "GeoDev is a Geo Spatial Company that specialize in geo- development and FME training. We are FME certified professionals. We work freelance (ZZP) in Netherlands or Sweden. ",
-        image: "/geodev_screenshot.png"
+        image: "/geodev_screenshot.png",
       },
       email: "geodev.nl",
       emaildomain: "gmail.com",
@@ -446,8 +480,7 @@ export default {
         Wayofworking: "DevOps, Scrum, Agile",
         Container: "Docker, Kubernetes",
         FME: "FME desktop, FME server, FME Cloud, Custom Transformers, python",
-        ESRI:
-          "ArcGIS Pro, ArcMap, Enterprise, GeoEvent, AGOL, ArcGIS server, Collector apps, GeoWeb",
+        ESRI: "ArcGIS Pro, ArcMap, Enterprise, GeoEvent, AGOL, ArcGIS server, Collector apps, GeoWeb",
         "ESRI Script":
           "Arpcy, ArcGIS API for JavaScript, Jupyter Notebooks, ArcGIS API for Python",
         WebGIS: "Geoserver, Openlayers, Mapbox (here on this site!), Leaflet",
@@ -457,27 +490,27 @@ export default {
         Website: "HTML, JS, CSS, SASS, SCSS",
         APIs: "Swagger, Rest",
         DevTools: "Git, Node, VisualStudio, VS code, Pycharm, Fork",
-        Platforms: "Linux, Windows, Openshift"
+        Platforms: "Linux, Windows, Openshift",
       },
       portfolio: [
         {
-          title: "Common Operational Picture (COP)",
+          title: "Common Operational Picture",
           img: "thumbs/thumb-07.png",
           subtitle: "Dutch Army / Military police",
-          url: "COP"
+          url: "COP",
+        },
+        {
+          title: "Go to gate",
+          img: "thumbs/thumb-02.png",
+          subtitle: "Wayfinding at Schiphol API",
+          url: "wayfinding",
         },
         {
           title: "Does the glacier retreat?",
           img: "thumbs/thumb-01.png",
           subtitle: "Drones in Himalaya",
-          url: "glacier"
+          url: "glacier",
         },
-        {
-          title: "Go to your gate",
-          img: "thumbs/thumb-02.png",
-          subtitle: "Wayfinding on Schihol API",
-          url: "wayfinding"
-        }
         // {
         //   title: "How rough is Holland?",
         //   img: "thumbs/thumb-03.png",
@@ -502,11 +535,11 @@ export default {
         //   subtitle: "ArcGIS, PDOK, Waterschapsdata",
         //   url: "datalab"
         // }
-      ]
+      ],
     };
   },
   components: {
-    Mapbox
+    Mapbox,
   },
   methods: {
     linkedin(user) {
@@ -514,8 +547,8 @@ export default {
     },
     openPassiveOpen() {
       openURL("https://passiveopen.com/");
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -576,7 +609,8 @@ section
     opacity: 0.8
   .q-img
     max-width: 200px
-
+.language-circle
+  height: 32px
 .normallist
     list-style: none
     font-family: 'Ubuntu-Light'
@@ -620,6 +654,8 @@ section
     max-width: 600px
     cursor: pointer
     overflow: hidden
+    left: 11px
+    top: -20px
 
 #portfoliocard
   position: absolute
@@ -681,6 +717,7 @@ section
   overflow: hidden
   flex: 0 0 31%
   cursor: pointer
+  margin: 8px
 
   .q-page-footer
     position: relative

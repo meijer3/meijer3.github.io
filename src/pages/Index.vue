@@ -92,9 +92,6 @@
     <section class="q-py-xl" id="portfolio">
       <div class="container q-mt-xl">
         <h2 class="section-heading">Portfolio</h2>
-        <h3 class="section-subheading light">
-          A few of the many projects done.
-        </h3>
 
         <div
           class="fit row wrap justify-around items-start content-start"

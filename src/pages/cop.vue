@@ -28,7 +28,7 @@
         data, test data is used.
         <br />
         <br />
-        The improvements related to the old website:
+        The improvements in relation to the old website:
         <ul
           class="text-center"
           style="margin: 20px auto 0; width: 380px; list-style: decimal"

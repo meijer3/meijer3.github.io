@@ -299,7 +299,8 @@
           <h4>Sander Meijer</h4>
           <p class="text-muted">
             Freelance Developer / Trainer / Analyst<br />
-            Speaks Dutch / Swedish / English
+            Speaks Dutch / Swedish / English<br />
+            Sweden, Skåne based
             <div class="fit q-gutter-sm">
 
               <img
@@ -386,7 +387,7 @@
         <div class="row align-items-center">
           <div class="col-4 text-right">
             <span class="copyright"
-              >Copyright &copy; GeoDev 2016-{{ new Date().getFullYear()
+              >Copyright &copy; GeoDev (AB) 2016-{{ new Date().getFullYear()
               }}<br />kvk: 80974457</span
             >
           </div>
